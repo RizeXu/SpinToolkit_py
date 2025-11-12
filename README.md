@@ -1,6 +1,6 @@
 # SpinToolkit_py
 
-This repository provides the user-facing documentation and python tutorials of the **SpinToolkit** library.
+This repository provides the documentation and python tutorials of the **SpinToolkit** library.
 
 SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, including
 
