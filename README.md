@@ -13,6 +13,8 @@ SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, inclu
 
 :tada: :tada: :tada: The Python API of **SpinToolkit** is now available as Docker [images](https://github.com/orgs/spintoolkit-dev/packages) on the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)!!!
 
+The documentation of the library can be found at [SpinToolkit_py](https://github.com/orgs/spintoolkit-dev/packages).
+
 ## Docker/Podman (Linux/MacOS/Windows)
 
 Using [Docker](https://www.docker.com/products/docker-hub/) or [Podman](https://podman.io/) is a convenient way to run the _SpinToolkit_ library without spending effort installing all the dependencies, and is recommended to all users. These two softwares share almost identical usage, so converting from one to another is painless. In fact, if you are using Podman in systems like Ubuntu, you can install the tool `podman-docker` and continue to use Docker syntax where `docker` is really `podman` in disguise. Alternatively, you can `alias docker=podman` to use Docker syntax with Podman engine.
