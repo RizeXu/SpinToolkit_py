@@ -1,0 +1,101 @@
+.. _lattice:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Class
+====================
+
+.. autoclass:: SpinToolkit_py.lattice
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__, coor2cart
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, basis_a: list[list[float]], pos_sub: list[list[float]], l: list[int])
+        :no-index:
+
+        Construct an untilted lattice (:math:`\boldsymbol{A}_j \parallel \boldsymbol{a}_j`) from a given basis.
+
+        :param basis_a: Real-space basis vectors :math:`[\boldsymbol{a}_0, \boldsymbol{a}_1, \ldots]`.
+        :param pos_sub: List of sublattice coordinates in units of the basis :math:`\boldsymbol{a}_j`.
+        :param l: List of linear dimensions along each basis direction.
+
+    .. method:: __init__(self, *, name: str, l: list[int])
+        :no-index:
+
+        Construct an untilted lattice (:math:`\boldsymbol{A}_j \parallel \boldsymbol{a}_j`) from a built-in name.
+
+        :param name: Name of the lattice. Choose from [chain, square, triangular, kagome, honeycomb, cubic, fcc, triangular-stacked, pyrochlore, pyrochlore-16, pyrochlore-111].
+        :param l: List of linear dimensions along each basis direction.
+
+    .. method:: __init__(self, *, filename: str)
+        :no-index:
+
+        Construct a general lattice from a user-defined TOML file.
+
+        :param filename: Name of the toml file.
+
+        .. rubric:: Notes
+
+        The TOML file must specify the lattice geometry and sublattice structure with the following fields:
+
+        - ``dim`` : Spatial dimension (1, 2, or 3).
+        - ``a0``, ``a1``, ``a2`` : Basis vectors :math:`\boldsymbol{a}_j` as floating-point arrays.
+        - ``A0``, ``A1``, ``A2`` : Superlattice basis vectors :math:`\boldsymbol{A}_j` expressed as integer coefficients of the crystal basis.
+        - ``num_sub`` : Number of sublattices.
+        - ``pos_sub0``, ``pos_sub1``, ... : Sublattice coordinates in units of the basis :math:`\boldsymbol{a}_j`.
+        - ``[[sub0]]``, ``[[sub1]]``, ... : Arrays of sublattice sites, where each entry contains a ``site`` field
+          with integer coordinates specifying the position within the superlattice.
+
+        The superlattice basis vectors :math:`\boldsymbol{A}_j` are not required to be parallel to the crystal
+        basis vectors :math:`\boldsymbol{a}_j`, allowing for flexible magnetic unit cell definitions compatible
+        with various ordering wave vectors.
+
+        .. rubric:: Example
+
+        Triangular lattice with 120° ordering (K-point):
+
+        .. code-block:: toml
+
+            dim = 2
+
+            a0 = [ 1.0, 0.0 ]
+            a1 = [ -0.5, 0.86602540378443865 ]
+
+            A0 = [ 2, 1 ]
+            A1 = [ 1, 2 ]
+
+            num_sub = 1
+            pos_sub0 = [ 0.0, 0.0 ]
+
+            [[sub0]]
+            site = [ 0, 0 ]
+            [[sub0]]
+            site = [ 1, 0 ]
+            [[sub0]]
+            site = [ 1, 1 ]
+
+    .. method:: coor2cart(self, *, coor: list[int]) -> list[float]
+
+        Calculate Cartesian coordinate :math:`[x,y,z]= \sum_i m_i \boldsymbol{a}_i` with given coordinate :math:`m_i`.
+
+        :param coor: Coordinate :math:`[m_0, m_1, \ldots]`.
+        :rtype: list[float]
+        :return: Cartesian coordinate :math:`[x,y,z]`.
+
+    .. method:: coor2cart(self, *, coor: list[int], sub: int) -> list[float]
+        :no-index:
+
+        Calculate Cartesian coordinates :math:`[x,y,z]= \sum_i m_i \boldsymbol{a}_i + \vec{d}` with
+        given coordinate :math:`m_i` and sublattice index (:math:`\vec{d}` accounts for the displacement of the sublattice).
+
+        :param coor: Coordinate :math:`[m_0, m_1, \ldots]`.
+        :param sub: Index of sublattice.
+        :rtype: list[float]
+        :return: Cartesian coordinate :math:`[x,y,z]`.

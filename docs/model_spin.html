@@ -1,0 +1,789 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class &mdash; SpinToolkit v1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6ac6f732"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes" href="spinwave.html" />
+    <link rel="prev" title="Class" href="lattice.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SpinToolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Indices and Tables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search Page</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lattice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lattice.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.model_spin"><code class="docutils literal notranslate"><span class="pre">model_spin</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.__init__"><code class="docutils literal notranslate"><span class="pre">model_spin.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_2spin_DM"><code class="docutils literal notranslate"><span class="pre">model_spin.add_2spin_DM()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_2spin_Jmatrix"><code class="docutils literal notranslate"><span class="pre">model_spin.add_2spin_Jmatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_2spin_XYZ"><code class="docutils literal notranslate"><span class="pre">model_spin.add_2spin_XYZ()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_biquadratic"><code class="docutils literal notranslate"><span class="pre">model_spin.add_biquadratic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_dipolar"><code class="docutils literal notranslate"><span class="pre">model_spin.add_dipolar()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_site_Amatrix"><code class="docutils literal notranslate"><span class="pre">model_spin.add_site_Amatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_site_CEF"><code class="docutils literal notranslate"><span class="pre">model_spin.add_site_CEF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_site_Dvector"><code class="docutils literal notranslate"><span class="pre">model_spin.add_site_Dvector()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.add_zeeman"><code class="docutils literal notranslate"><span class="pre">model_spin.add_zeeman()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.build_mc_list"><code class="docutils literal notranslate"><span class="pre">model_spin.build_mc_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.cal_dipolar_D"><code class="docutils literal notranslate"><span class="pre">model_spin.cal_dipolar_D()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.dim"><code class="docutils literal notranslate"><span class="pre">model_spin.dim()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.energy_SUN"><code class="docutils literal notranslate"><span class="pre">model_spin.energy_SUN()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.energy_dipole"><code class="docutils literal notranslate"><span class="pre">model_spin.energy_dipole()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.init_GLSW"><code class="docutils literal notranslate"><span class="pre">model_spin.init_GLSW()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.init_LSW"><code class="docutils literal notranslate"><span class="pre">model_spin.init_LSW()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.optimize_spins_SUN"><code class="docutils literal notranslate"><span class="pre">model_spin.optimize_spins_SUN()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.optimize_spins_dipole"><code class="docutils literal notranslate"><span class="pre">model_spin.optimize_spins_dipole()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.prt"><code class="docutils literal notranslate"><span class="pre">model_spin.prt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.prt_mc_list"><code class="docutils literal notranslate"><span class="pre">model_spin.prt_mc_list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.simplify"><code class="docutils literal notranslate"><span class="pre">model_spin.simplify()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.total_sites"><code class="docutils literal notranslate"><span class="pre">model_spin.total_sites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.E0"><code class="docutils literal notranslate"><span class="pre">model_spin.E0</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.S"><code class="docutils literal notranslate"><span class="pre">model_spin.S</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.model_spin.mode"><code class="docutils literal notranslate"><span class="pre">model_spin.mode</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#functions">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.spin_cart2spherical"><code class="docutils literal notranslate"><span class="pre">spin_cart2spherical()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.spin_spherical2cart"><code class="docutils literal notranslate"><span class="pre">spin_spherical2cart()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.set_Ising_random"><code class="docutils literal notranslate"><span class="pre">set_Ising_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.set_dipole_random"><code class="docutils literal notranslate"><span class="pre">set_dipole_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.set_SUN_random"><code class="docutils literal notranslate"><span class="pre">set_SUN_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.set_RPA_random"><code class="docutils literal notranslate"><span class="pre">set_RPA_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.spins_magnetization"><code class="docutils literal notranslate"><span class="pre">spins_magnetization()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spin Wave</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#core-functions">Core Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#extension-functions">Extension Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classical Monte Carlo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mc_classical.html">Classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Rotation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crystal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Units</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#allowed-operators">Allowed Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SpinToolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model_spin.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="model-spin">SpinToolkit python documentation</p>
+<section id="class">
+<h1>Class<a class="headerlink" href="#class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">model_spin</span></span><a class="headerlink" href="#SpinToolkit_py.model_spin" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpinToolkit_py.model_spin.__init__" title="Link to this definition"></a></dt>
+<dd><p>Default constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Construct from spin magnitude，mode and lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>S</strong> – Magnitude of the spins.</p></li>
+<li><p><strong>mode</strong> – Choose from {“dipole”, “SU(N)”, “RPA”}.</p></li>
+<li><p><strong>lattice</strong> – Underlying lattice.</p></li>
+<li><p><strong>verbose</strong> – If true, print detailed info in console. (Default: True)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_2spin_DM">
+<span class="sig-name descname"><span class="pre">add_2spin_DM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Dij</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3" title="SpinToolkit_py.Vec3"><span class="pre">SpinToolkit_py.Vec3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_2spin_DM" title="Link to this definition"></a></dt>
+<dd><p>Add Dzyaloshinskii-Moriya (DM) interaction <span class="math notranslate nohighlight">\(\vec{D}_{ij} \cdot (\hat{\boldsymbol{S}}_i \times \hat{\boldsymbol{S}}_j)\)</span> at bond {i, j}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Dij</strong> – Strength of the DM interaction.</p></li>
+<li><p><strong>site_i</strong> – Index of site-i.</p></li>
+<li><p><strong>site_j</strong> – Index of site-j.</p></li>
+<li><p><strong>Mi</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-i: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_i = \sum_n M_i^n \boldsymbol{A}_n\)</span>.</p></li>
+<li><p><strong>Mj</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-j: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_j = \sum_n M_j^n \boldsymbol{A}_n\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_2spin_Jmatrix">
+<span class="sig-name descname"><span class="pre">add_2spin_Jmatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Jij</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Mat3" title="SpinToolkit_py.Mat3"><span class="pre">SpinToolkit_py.Mat3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_2spin_Jmatrix" title="Link to this definition"></a></dt>
+<dd><p>Add general bilinear interaction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{S}}_i \cdot (J_{ij} \hat{\boldsymbol{S}}_j)\)</span> at bond {i, j}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Jij</strong> – General <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix of the exchange interaction.</p></li>
+<li><p><strong>site_i</strong> – Index of site-i.</p></li>
+<li><p><strong>site_j</strong> – Index of site-j.</p></li>
+<li><p><strong>Mi</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-i: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_i = \sum_n M_i^n \boldsymbol{A}_n\)</span>.</p></li>
+<li><p><strong>Mj</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-j: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_j = \sum_n M_j^n \boldsymbol{A}_n\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_2spin_XYZ">
+<span class="sig-name descname"><span class="pre">add_2spin_XYZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">J</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3" title="SpinToolkit_py.Vec3"><span class="pre">SpinToolkit_py.Vec3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_2spin_XYZ" title="Link to this definition"></a></dt>
+<dd><p>Add XYZ interaction <span class="math notranslate nohighlight">\(J^x \hat{S}_i^x \hat{S}_j^x + J^y \hat{S}_i^y \hat{S}_j^y + J^z \hat{S}_i^z \hat{S}_j^z\)</span> at bond {i, j}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>J</strong> – Strength of the XYZ interaction.</p></li>
+<li><p><strong>site_i</strong> – Index of site-i.</p></li>
+<li><p><strong>site_j</strong> – Index of site-j.</p></li>
+<li><p><strong>Mi</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-i: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_i = \sum_n M_i^n \boldsymbol{A}_n\)</span>.</p></li>
+<li><p><strong>Mj</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-j: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_j = \sum_n M_j^n \boldsymbol{A}_n\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_biquadratic">
+<span class="sig-name descname"><span class="pre">add_biquadratic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site_j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_biquadratic" title="Link to this definition"></a></dt>
+<dd><p>Add biquadratic interaction <span class="math notranslate nohighlight">\(K \left(\hat{\boldsymbol{S}}_i \cdot \hat{\boldsymbol{S}}_j \right)^2\)</span> at bond {i, j}.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>K</strong> – Strength of the biquadratic interaction.</p></li>
+<li><p><strong>site_i</strong> – Index of site-i.</p></li>
+<li><p><strong>site_j</strong> – Index of site-j.</p></li>
+<li><p><strong>Mi</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-i: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_i = \sum_n M_i^n \boldsymbol{A}_n\)</span>.</p></li>
+<li><p><strong>Mj</strong> – Supercell coordinate <span class="math notranslate nohighlight">\(\vec{M}_i\)</span> of site-j: <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{r}}_j = \sum_n M_j^n \boldsymbol{A}_n\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_dipolar">
+<span class="sig-name descname"><span class="pre">add_dipolar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">etaR</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">accuracy_goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_fourier</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_dipolar" title="Link to this definition"></a></dt>
+<dd><p>Add dipole-dipole interaction (3D-system only), computed internally with Ewald summation method.</p>
+<div class="math notranslate nohighlight">
+\[\frac{D}{2} R^3 \sum_{i\neq j} \frac{\hat{\boldsymbol{S}}_i \cdot \hat{\boldsymbol{S}}_j -3 (\hat{\boldsymbol{S}}_i \cdot \hat{r}_{ij}) (\hat{\boldsymbol{S}}_j \cdot \hat{r}_{ij})}{r_{ij}^3}.\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – Coefficient of the dipole-dipole interaction,
+which can be calculated by <a class="reference internal" href="#SpinToolkit_py.model_spin.cal_dipolar_D" title="SpinToolkit_py.model_spin.cal_dipolar_D"><code class="xref py py-meth docutils literal notranslate"><span class="pre">cal_dipolar_D()</span></code></a>.</p></li>
+<li><p><strong>etaR</strong> – Gaussian broadening factor to separate long- and short-range contributions
+(R is the length of the shortest bond on the lattice). (Default: 1.0)</p></li>
+<li><p><strong>accuracy_goal</strong> – Relative error = <span class="math notranslate nohighlight">\(10^{-\text{accuracy goal}}\)</span>.
+Must be between 2 and 7. (Default: 3)</p></li>
+<li><p><strong>use_fourier</strong> – If true, evaluate the long-range part of the Ewald sum in fourier space; otherwise in real-space. (Default: True)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_site_Amatrix">
+<span class="sig-name descname"><span class="pre">add_site_Amatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Mat3" title="SpinToolkit_py.Mat3"><span class="pre">SpinToolkit_py.Mat3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_site_Amatrix" title="Link to this definition"></a></dt>
+<dd><p>Add single-ion anisotropy <span class="math notranslate nohighlight">\(\hat{\boldsymbol{S}}_i \cdot (A \hat{\boldsymbol{S}}_i)\)</span> on site-i.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> – Symmetric <span class="math notranslate nohighlight">\(3\times 3\)</span> matrix of the single-ion anisotropy.</p></li>
+<li><p><strong>site</strong> – Index of site.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_site_CEF">
+<span class="sig-name descname"><span class="pre">add_site_CEF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Blm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_site_CEF" title="Link to this definition"></a></dt>
+<dd><p>Add CEF term <span class="math notranslate nohighlight">\(B_l^m (\hat{O}_l^m)_i\)</span> on site-i.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>l</strong> – Rank of the CEF term (<span class="math notranslate nohighlight">\(2 \le l \le 8\)</span>).</p></li>
+<li><p><strong>m</strong> – Component of the CEF term(<span class="math notranslate nohighlight">\(-l \le m \le l\)</span>).</p></li>
+<li><p><strong>Blm</strong> – Strength of the CEF term.</p></li>
+<li><p><strong>site</strong> – Index of site.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_site_Dvector">
+<span class="sig-name descname"><span class="pre">add_site_Dvector</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">D</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3" title="SpinToolkit_py.Vec3"><span class="pre">SpinToolkit_py.Vec3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_site_Dvector" title="Link to this definition"></a></dt>
+<dd><p>Add single-ion anisotropy <span class="math notranslate nohighlight">\(\sum_\mu D^\mu (\hat{S}_i^\mu)^2\)</span> on site-i.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>D</strong> – Strength of the single-ion anisotropy.</p></li>
+<li><p><strong>site</strong> – Index of site.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.add_zeeman">
+<span class="sig-name descname"><span class="pre">add_zeeman</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3" title="SpinToolkit_py.Vec3"><span class="pre">SpinToolkit_py.Vec3</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.add_zeeman" title="Link to this definition"></a></dt>
+<dd><p>Add Zeeman coupling <span class="math notranslate nohighlight">\(-\vec{h} \cdot \hat{\boldsymbol{S}}_i\)</span> on site-i.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> – Strength of the magnetic field (Note: g-tensor is absorbed inside <span class="math notranslate nohighlight">\(\vec{h}\)</span>).</p></li>
+<li><p><strong>site</strong> – Index of site.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.build_mc_list">
+<span class="sig-name descname"><span class="pre">build_mc_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.build_mc_list" title="Link to this definition"></a></dt>
+<dd><p>Build extra internal data structures to improve energy calculation efficiency.</p>
+<p>The use of name “mc_list” was for historical reasons: In early versions of the code,
+only Monte Carlo routines were using these internal data structures.
+In recent versions, all energy calculations are now requiring these internal data structures to be present.
+So, <cite>build_mc_list</cite> must be executed immediately after model simplification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> – If true, print out building details. (Default: True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.cal_dipolar_D">
+<span class="sig-name descname"><span class="pre">cal_dipolar_D</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">units</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="units.html#SpinToolkit_py.units" title="SpinToolkit_py.units"><span class="pre">SpinToolkit_py.units</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.cal_dipolar_D" title="Link to this definition"></a></dt>
+<dd><p>Calculate the coefficient of the dipole-dipole interaction.</p>
+<div class="math notranslate nohighlight">
+\[D = \frac{\mu_0}{4\pi} \frac{(g \mu_B)^2}{R^3},\]</div>
+<p>where <span class="math notranslate nohighlight">\(R\)</span> is the length of the shortest bond on the lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>units</strong> – The units system object.</p></li>
+<li><p><strong>g</strong> – The g-factor.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Coefficient D.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.dim">
+<span class="sig-name descname"><span class="pre">dim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.dim" title="Link to this definition"></a></dt>
+<dd><p>Return dimension of the space.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.energy_SUN">
+<span class="sig-name descname"><span class="pre">energy_SUN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.VecZList" title="SpinToolkit_py.VecZList"><span class="pre">SpinToolkit_py.VecZList</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.energy_SUN" title="Link to this definition"></a></dt>
+<dd><p>Return energy density <span class="math notranslate nohighlight">\(e=E/L\)</span> in SU(N) mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> – List of SU(N) coherent states in complex numbers: <span class="math notranslate nohighlight">\([\vec{Z}_1, \ldots, \vec{Z}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{Z}_i|=1\)</span> required).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Energy density <span class="math notranslate nohighlight">\(e=E/L\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.energy_dipole">
+<span class="sig-name descname"><span class="pre">energy_dipole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">grad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.energy_dipole" title="Link to this definition"></a></dt>
+<dd><p>Return energy density <span class="math notranslate nohighlight">\(e=E/L\)</span> and gradients in dipole mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – List of spin dipoles: <span class="math notranslate nohighlight">\([\vec{s}_1,\ldots,\vec{s}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i| = 1\)</span> required).</p></li>
+<li><p><strong>grad</strong> – Must be of size 0 or L on entry.
+If of size L, then overwritten by <span class="math notranslate nohighlight">\([\frac{\mathrm{d}e}{\mathrm{d}\vec{s}_1}, \ldots, \frac{\mathrm{d}e}{\mathrm{d}\vec{s}_L}]\)</span> (modified in-place).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Energy density <span class="math notranslate nohighlight">\(e=E/L\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.init_GLSW">
+<span class="sig-name descname"><span class="pre">init_GLSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.VecZList" title="SpinToolkit_py.VecZList"><span class="pre">SpinToolkit_py.VecZList</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.init_GLSW" title="Link to this definition"></a></dt>
+<dd><p>Prepare internal variables for generalized linear spin wave (GLSW) calculations.
+Should be called before running GLSW calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z_min</strong> – List of SU(N) coherent states in complex numbers of the lowest energy state: <span class="math notranslate nohighlight">\([\vec{Z}_1, \ldots, \vec{Z}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{Z}_i|=1\)</span> required).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.init_LSW">
+<span class="sig-name descname"><span class="pre">init_LSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">s_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation" title="SpinToolkit_py.Mat3_rotation"><span class="pre">SpinToolkit_py.Mat3_rotation</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.init_LSW" title="Link to this definition"></a></dt>
+<dd><p>Prepare internal variables for linear spin wave (LSW) calculations.
+Should be called before running LSW calculations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s_min</strong> – List of spin dipoles of the lowest energy state: <span class="math notranslate nohighlight">\([\vec{s}_1,\ldots,\vec{s}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i| = 1\)</span> required).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of rotation matrices that satisfy <span class="math notranslate nohighlight">\(\vec{s}_i = R_i \hat{z}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[<a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation" title="SpinToolkit_py.Mat3_rotation"><em>Mat3_rotation</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.optimize_spins_SUN">
+<span class="sig-name descname"><span class="pre">optimize_spins_SUN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_seeds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.VecZList" title="SpinToolkit_py.VecZList"><span class="pre">SpinToolkit_py.VecZList</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.optimize_spins_SUN" title="Link to this definition"></a></dt>
+<dd><p>Optimize the ground state spin configurations in SU(N) mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total_seeds</strong> – Total number of random initial spin configurations tried in optimization (the more seeds, the more likely to hit global minimum).</p></li>
+<li><p><strong>seed0</strong> – Seed of the first random initial spin configuration. All seeds used: [seed0, seed0+1, …, seed0+total_seeds-1]. (default to 0).</p></li>
+<li><p><strong>algorithm</strong> – Algorithm used in optimization. If chosen in [1:8], a particular algorithm shall be used; If &gt;=10, algorithms 1~5 will be rotated. (default to 1).</p></li>
+<li><p><strong>maxeval</strong> – Maximal evaluations allowed for each optimization at a given seed. (default to 10000).</p></li>
+<li><p><strong>verbose</strong> – If true, print out optimization details in console. (default to False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>Z_min</strong> (<em>list[list[complex]]</em>) – List of SU(N) coherent states in complex numbers of the lowest energy state: <span class="math notranslate nohighlight">\([\vec{Z}_1, \ldots, \vec{Z}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{Z}_i|=1\)</span> fulfilled).</p></li>
+<li><p><strong>e_min</strong> (<em>float</em>) – Lowest energy density <span class="math notranslate nohighlight">\(e_\text{(min)} \equiv E_\text{(min)}/L\)</span> found.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.optimize_spins_dipole">
+<span class="sig-name descname"><span class="pre">optimize_spins_dipole</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_seeds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">algorithm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.optimize_spins_dipole" title="Link to this definition"></a></dt>
+<dd><p>Optimize the ground state spin configuration in dipole mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total_seeds</strong> – Total number of random initial spin configurations tried in optimization (the more seeds, the more likely to hit global minimum).</p></li>
+<li><p><strong>seed0</strong> – Seed of the first random initial spin configuration. All seeds used: [seed0, seed0+1, …, seed0+total_seeds-1]. (default to 0).</p></li>
+<li><p><strong>algorithm</strong> – Algorithm used in optimization. If chosen in [1:8], a particular algorithm shall be used; If &gt;=10, algorithms 1~5 will be rotated. (default to 1).</p></li>
+<li><p><strong>maxeval</strong> – Maximal evaluations allowed for each optimization at a given seed. (default to 10000).</p></li>
+<li><p><strong>verbose</strong> – If true, print out optimization details in console. (default to False).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>s_min</strong> (<em>list[~SpinToolkit_py.Vec3]</em>) – List of spin dipoles of the lowest energy state: <span class="math notranslate nohighlight">\([\vec{s}_1,\ldots,\vec{s}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i| = 1\)</span> fulfilled).</p></li>
+<li><p><strong>e_min</strong> (<em>float</em>) – Lowest energy density <span class="math notranslate nohighlight">\(e_\text{(min)} \equiv E_\text{(min)}/L\)</span> found.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.prt">
+<span class="sig-name descname"><span class="pre">prt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.prt" title="Link to this definition"></a></dt>
+<dd><p>Print model information (list of interactions).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.prt_mc_list">
+<span class="sig-name descname"><span class="pre">prt_mc_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.prt_mc_list" title="Link to this definition"></a></dt>
+<dd><p>Print model information (list of interactions structured for MC).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.simplify">
+<span class="sig-name descname"><span class="pre">simplify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.simplify" title="Link to this definition"></a></dt>
+<dd><p>Clean up the internal data structure (merging identical bonds, removing zeros, etc.).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>verbose</strong> – If true, print out simplification details. (Default: True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.total_sites">
+<span class="sig-name descname"><span class="pre">total_sites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.total_sites" title="Link to this definition"></a></dt>
+<dd><p>Return total number of lattice sites (L) in the magnetic unit cell.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.E0">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">E0</span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.E0" title="Link to this definition"></a></dt>
+<dd><p>Constant shift of the Hamiltonian after model simplification.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.S">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">S</span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.S" title="Link to this definition"></a></dt>
+<dd><p>Magnitude of the spins.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.model_spin.mode">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#SpinToolkit_py.model_spin.mode" title="Link to this definition"></a></dt>
+<dd><p>Mode used for the computation (dipole, SUN, RPA)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="functions">
+<h1>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.spin_cart2spherical">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spin_cart2spherical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.spin_cart2spherical" title="Link to this definition"></a></dt>
+<dd><p>Convert spin dipole from Cartesian representation to spherical angles.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s^x \\ s^y \\ s^z \end{pmatrix}
+= r
+\begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix}.\end{split}\]</div>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>s</strong> – <span class="math notranslate nohighlight">\([s^x, s^y, s^z]\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><br><ul class="simple">
+<li><p><strong>theta</strong> (<em>float</em>) - Polar angle.</p></li>
+<li><p><strong>phi</strong> (<em>float</em>) - Azimuthal angle.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spin_cart2spherical</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Convert SU(N) coherent state from complex numbers to Euler angles.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+  Z^0 \\
+  Z^1 \\
+  \vdots \\
+  Z^{N-1}
+\end{pmatrix}
+= e^{i \phi^0}
+\begin{pmatrix}
+  e^{i \phi^{N-1}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\sin\theta^{N-1}\\
+  e^{i \phi^{N-2}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\cos\theta^{N-1}\\
+  \vdots\\
+  e^{i \phi^{2}}\sin\theta^{1}\sin\theta^{2}\cos\theta^{3}\\
+  e^{i \phi^{1}}\sin\theta^{1}\cos\theta^{2}\\
+  \cos\theta^{1}
+\end{pmatrix}.\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> – Length-N list of SU(N) coherent state in complex numbers: <span class="math notranslate nohighlight">\([Z^0,Z^1,\ldots,Z^{N-1}]\)</span>  (normalization <span class="math notranslate nohighlight">\(|\vec{Z}|=1\)</span> required).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Length-(2N-2) list of SU(N) coherent state in Euler angles: <span class="math notranslate nohighlight">\([\theta^1,\theta^2,\ldots,\theta^{N-1},\phi^1,\phi^2,\ldots,\phi^{N-1}]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.spin_spherical2cart">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spin_spherical2cart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.spin_spherical2cart" title="Link to this definition"></a></dt>
+<dd><p>Convert spin dipole from spherical angles to Cartesian representation.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix} s^x \\ s^y \\ s^z \end{pmatrix}
+=
+\begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix}.\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta</strong> – Polar angle.</p></li>
+<li><p><strong>phi</strong> – Azimuthal angle.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\([s^x, s^y, s^z]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spin_spherical2cart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta_phi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Convert SU(N) coherent state from Euler angles to complex numbers.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+  Z^0 \\
+  Z^1 \\
+  \vdots \\
+  Z^{N-1}
+\end{pmatrix}
+=
+\begin{pmatrix}
+  e^{i \phi^{N-1}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\sin\theta^{N-1}\\
+  e^{i \phi^{N-2}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\cos\theta^{N-1}\\
+  \vdots\\
+  e^{i \phi^{2}}\sin\theta^{1}\sin\theta^{2}\cos\theta^{3}\\
+  e^{i \phi^{1}}\sin\theta^{1}\cos\theta^{2}\\
+  \cos\theta^{1}
+\end{pmatrix}.\end{split}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>theta_phi</strong> – Length-(2N-2) list of SU(N) coherent state in Euler angles: <span class="math notranslate nohighlight">\([\theta^1,\theta^2,\ldots,\theta^{N-1},\phi^1,\phi^2,\ldots,\phi^{N-1}]\)</span>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[complex]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Length-N list of SU(N) coherent state in complex numbers: <span class="math notranslate nohighlight">\([Z^0,Z^1,\ldots,Z^{N-1}]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.set_Ising_random">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">set_Ising_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.set_Ising_random" title="Link to this definition"></a></dt>
+<dd><p>Randomly flip a list of spin dipoles along input Ising axes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> – Random seed.</p></li>
+<li><p><strong>s</strong> – List of spin dipoles in Cartesian representation: <span class="math notranslate nohighlight">\([\vec{s}_1, \ldots, \vec{s}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i| = 1\)</span> required and fulfilled) (modified in-place).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.set_dipole_random">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">set_dipole_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.set_dipole_random" title="Link to this definition"></a></dt>
+<dd><p>Randomize a list of spin dipoles on the <span class="math notranslate nohighlight">\(S^2\)</span> sphere uniformly, using “dipole” mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> – Random seed.</p></li>
+<li><p><strong>s</strong> – List of spin dipoles in Cartesian representation: <span class="math notranslate nohighlight">\([\vec{s}_1, \ldots, \vec{s}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i| = 1\)</span> fulfilled) (modified in-place).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.set_SUN_random">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">set_SUN_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.VecZList" title="SpinToolkit_py.VecZList"><span class="pre">SpinToolkit_py.VecZList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.set_SUN_random" title="Link to this definition"></a></dt>
+<dd><p>Randomize a list of SU(N) coherent states on the <span class="math notranslate nohighlight">\(S^{2N-2}\)</span> sphere uniformly. In addition, the global phase is fixed such that <span class="math notranslate nohighlight">\(Z_i^{N-1}\)</span> is real.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> – Random seed.</p></li>
+<li><p><strong>Z</strong> – List of SU(N) coherent states in complex numbers: <span class="math notranslate nohighlight">\([\vec{Z}_1, \ldots, \vec{Z}_L]\)</span> (normalization <span class="math notranslate nohighlight">\(|\vec{Z}_i|=1\)</span> fulfilled) (modified in-place).</p></li>
+<li><p><strong>N</strong> – Dimension N in SU(N).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.set_RPA_random">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">set_RPA_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.set_RPA_random" title="Link to this definition"></a></dt>
+<dd><p>Randomize a list of spin dipoles in a ball of radius S. For each spin, the angles are uniformly sampled on the <span class="math notranslate nohighlight">\(S^2\)</span> sphere, and the magnitude is uniformly sampled in [0, S).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed</strong> – Random seed.</p></li>
+<li><p><strong>s</strong> – List of spin dipoles in Cartesian representation: <span class="math notranslate nohighlight">\([\vec{s}_1, \ldots, \vec{s}_L]\)</span> (modified in-place).</p></li>
+<li><p><strong>S</strong> – Magnitude of the spins.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.spins_magnetization">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spins_magnetization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3" title="SpinToolkit_py.Vec3"><span class="pre">SpinToolkit_py.Vec3</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">S</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.spins_magnetization" title="Link to this definition"></a></dt>
+<dd><p>Compute average magnetization of spin dipoles.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>s</strong> – List of spin dipoles (normalization <span class="math notranslate nohighlight">\(|\vec{s}_i|=1\)</span> required).</p></li>
+<li><p><strong>S</strong> – Magnitude of the spins.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><br><ul class="simple">
+<li><p><strong>mx</strong> (<em>float</em>) - Average magnetization along x-direction.</p></li>
+<li><p><strong>my</strong> (<em>float</em>) - Average magnetization along y-direction.</p></li>
+<li><p><strong>mz</strong> (<em>float</em>) - Average magnetization along z-direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">spins_magnetization</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Compute average magnetization of SU(N) coherent states.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Z</strong> – List of SU(N) coherent states (normalization <span class="math notranslate nohighlight">\(|\vec{Z}_i|=1\)</span> required).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><br><ul class="simple">
+<li><p><strong>mx</strong> (<em>float</em>) - Average magnetization along x-direction.</p></li>
+<li><p><strong>my</strong> (<em>float</em>) - Average magnetization along y-direction.</p></li>
+<li><p><strong>mz</strong> (<em>float</em>) - Average magnetization along z-direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lattice.html" class="btn btn-neutral float-left" title="Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="spinwave.html" class="btn btn-neutral float-right" title="Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, spintoolkit-dev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

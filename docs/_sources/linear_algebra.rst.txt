@@ -1,0 +1,641 @@
+.. _linear_algebra:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Classes
+====================
+
+.. autoclass:: SpinToolkit_py.Vec3
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to [0, 0, 0].
+
+    .. method:: __init__(self, x0: float, x1: float, x2: float)
+        :no-index:
+
+        Construct with three numbers.
+
+.. autoclass:: SpinToolkit_py.Vec4
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to [0, 0, 0, 0].
+
+    .. method:: __init__(self, x0: float, x1: float, x2: float, x3: float)
+        :no-index:
+
+        Construct with four numbers.
+
+.. autoclass:: SpinToolkit_py.Vec5
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to [0, 0, 0, 0, 0].
+
+    .. method:: __init__(self, x0: float, x1: float, x2: float, x3: float, x4: float)
+        :no-index:
+
+        Construct with five numbers.
+
+.. autoclass:: SpinToolkit_py.cx_Vec3
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to [0, 0, 0].
+
+    .. method:: __init__(self, x0: complex, x1: complex, x2: complex)
+        :no-index:
+
+        Construct with three numbers.
+
+.. autoclass:: SpinToolkit_py.Mat3
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to a zero matrix.
+
+    .. method:: __init__(self, type: str)
+        :no-index:
+
+        Construct according to an input type.
+
+        :param type: '0': zero; '1': identity matrix.
+
+    .. method:: __init__(self, x00: float, x01: float, x02: float, x10: float, x11: float, x12: float, x20: float, x21: float, x22: float)
+        :no-index:
+
+        Construct row by row.
+
+.. autoclass:: SpinToolkit_py.Mat4
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to a zero matrix.
+
+    .. method:: __init__(self, type: str)
+        :no-index:
+
+        Construct according to an input type.
+
+        :param type: '0': zero; '1': identity matrix.
+
+    .. method:: __init__(self, x00: float, x01: float, x02: float, x03: float, x10: float, x11: float, x12: float, x13: float, x20: float, x21: float, x22: float, x23: float, x30: float, x31: float, x32: float, x33: float)
+        :no-index:
+
+        Construct row by row.
+
+.. autoclass:: SpinToolkit_py.cx_Mat3
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor, initialize to a zero matrix.
+
+    .. method:: __init__(self, type: str)
+        :no-index:
+
+        Construct according to an input type.
+
+        :param type: '0': zero; '1': identity matrix.
+
+    .. method:: __init__(self, x00: complex, x01: complex, x02: complex, x10: complex, x11: complex, x12: complex, x20: complex, x21: complex, x22: complex)
+        :no-index:
+
+        Construct row by row.
+
+.. autoclass:: SpinToolkit_py.MatrixD
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, row: int, col: int, type: str = '0')
+        :no-index:
+
+        Construct with given row and column numbers.
+
+        :param row: Number of rows.
+        :param col: Number of columns.
+        :param type: '0': zero; '1': identity matrix; 'r': random matrix. (Default: '0')
+
+.. autoclass:: SpinToolkit_py.MatrixZ
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, row: int, col: int, type: str = '0')
+        :no-index:
+
+        Construct with given row and column numbers.
+
+        :param row: Number of rows.
+        :param col: Number of columns.
+        :param type: '0': zero; '1': identity matrix; 'r': random matrix. (Default: '0')
+
+.. autoclass:: SpinToolkit_py.spin_matrices
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, S: float)
+        :no-index:
+
+        Construct with a given spin magnitude.
+
+        :param S: Magnitude of the spin (integer or half-integer).
+
+.. autoclass:: SpinToolkit_py.stevens_matrices
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, S: float, l: int)
+        :no-index:
+
+        Construct with a given spin magnitude S and rank l.
+
+        :param S: Magnitude of the spin (integer or half-integer).
+        :param l: Rank.
+
+.. autoclass:: SpinToolkit_py.Vec3List
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__, resize, pop, extend, append, clear, insert
+
+    .. method:: __init__(self, size: int)
+
+        Create Vec3List with a given size (elements default initialized to 0).
+
+    .. method:: __init__(self, size: int, value: SpinToolkit_py.Vec3)
+        :no-index:
+
+        Create Vec3List with given size and value.
+
+    .. method:: resize(self, size: int)
+
+        Resize vector to a given size.
+
+    .. method:: resize(self, size: int, value: SpinToolkit_py.Vec3)
+        :no-index:
+
+        Resize vector to a given size with fill value.
+
+.. autoclass:: SpinToolkit_py.VecZList
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__, resize, pop, extend, append, clear, insert, remove, count
+
+    .. method:: __init__(self, size: int)
+
+        Create VecZList with given size (elements default initialized).
+
+    .. method:: __init__(self, size: int, value: list[complex])
+        :no-index:
+
+        Create VecZList with given size and value.
+
+    .. method:: resize(self, size: int)
+
+        Resize vector to a given size.
+
+    .. method:: resize(self, size: int, value: list[complex])
+        :no-index:
+
+        Resize vector to a given size with fill value.
+
+
+====================
+Allowed Operators
+====================
+
+- +=
+    -    Vec3 +=    Vec3
+    -    Vec4 +=    Vec4
+    -    Vec5 +=    Vec5
+    - cx_Vec3 += cx_Vec3
+    - cx_Vec3 +=    Vec3
+    -    Mat3 +=    Mat3
+    -    Mat4 +=    Mat4
+    - cx_Mat3 += cx_Mat3
+    - cx_Mat3 +=    Mat3
+    - MatrixD += MatrixD
+    - MatrixZ += MatrixZ
+
+- -=
+    -    Vec3 -=    Vec3
+    -    Vec4 -=    Vec4
+    -    Vec5 -=    Vec5
+    - cx_Vec3 -= cx_Vec3
+    - cx_Vec3 -=    Vec3
+    -    Mat3 -=    Mat3
+    -    Mat4 -=    Mat4
+    - cx_Mat3 -= cx_Mat3
+    - cx_Mat3 -=    Mat3
+    - MatrixD -= MatrixD
+    - MatrixZ -= MatrixZ
+
+- \*=
+    -    Vec3 \*=   float
+    -    Vec4 \*=   float
+    -    Vec5 \*=   float
+    - cx_Vec3 \*=   float
+    - cx_Vec3 \*= complex
+    -    Mat3 \*=   float
+    -    Mat3 \*=    Mat3
+    -    Mat4 \*=   float
+    -    Mat4 \*=    Mat4
+    - cx_Mat3 \*=   float
+    - cx_Mat3 \*= complex
+    - cx_Mat3 \*= cx_Mat3
+    - cx_Mat3 \*=    Mat3
+    - MatrixD \*=   float
+    - MatrixZ \*=   float
+    - MatrixZ \*= complex
+
+- %=
+    -    Vec3 %=    Vec3 (Schur product)
+    -    Vec4 %=    Vec4 (Schur product)
+    -    Vec5 %=    Vec5 (Schur product)
+    - cx_Vec3 %= cx_Vec3 (Schur product)
+
+- \-
+    -    -Vec3
+    -    -Vec4
+    -    -Vec5
+    - -cx_Vec3
+    -    -Mat3
+    -    -Mat4
+    - -cx_Mat3
+    - -MatrixD
+    - -MatrixZ
+
+- \+
+    -    Vec3 +    Vec3 ->    Vec3
+    -    Vec4 +    Vec4 ->    Vec4
+    -    Vec5 +    Vec5 ->    Vec5
+    - cx_Vec3 + cx_Vec3 -> cx_Vec3
+    - cx_Vec3 +    Vec3 -> cx_Vec3
+    -    Vec3 + cx_Vec3 -> cx_Vec3
+    -    Mat3 +    Mat3 ->    Mat3
+    -    Mat4 +    Mat4 ->    Mat4
+    - cx_Mat3 + cx_Mat3 -> cx_Mat3
+    - cx_Mat3 +    Mat3 -> cx_Mat3
+    -    Mat3 + cx_Mat3 -> cx_Mat3
+    - MatrixD + MatrixD -> MatrixD
+    - MatrixZ + MatrixZ -> MatrixZ
+
+- \-
+    -    Vec3 -    Vec3 ->    Vec3
+    -    Vec4 -    Vec4 ->    Vec4
+    -    Vec5 -    Vec5 ->    Vec5
+    - cx_Vec3 - cx_Vec3 -> cx_Vec3
+    - cx_Vec3 -    Vec3 ->    Vec3
+    -    Vec3 - cx_Vec3 -> cx_Vec3
+    -    Mat3 -    Mat3 ->    Mat3
+    -    Mat4 -    Mat4 ->    Mat4
+    - cx_Mat3 - cx_Mat3 -> cx_Mat3
+    - cx_Mat3 -    Mat3 -> cx_Mat3
+    -    Mat3 - cx_Mat3 -> cx_Mat3
+    - MatrixD - MatrixD -> MatrixD
+    - MatrixZ - MatrixZ -> MatrixZ
+
+- \*
+    -   float *    Vec3 ->    Vec3
+    -    Vec3 *   float ->    Vec3
+    -    Mat3 *    Vec3 ->    Vec3
+    -   float *    Vec4 ->    Vec4
+    -    Vec4 *   float ->    Vec4
+    -    Mat4 *    Vec4 ->    Vec4
+    -   float *    Vec5 ->    Vec5
+    -    Vec5 *   float ->    Vec5
+    -   float * cx_Vec3 -> cx_Vec3
+    - cx_Vec3 *   float -> cx_Vec3
+    - complex * cx_Vec3 -> cx_Vec3
+    - cx_Vec3 * complex -> cx_Vec3
+    - complex *    Vec3 -> cx_Vec3
+    -    Vec3 * complex -> cx_Vec3
+    -    Mat3 * cx_Vec3 -> cx_Vec3
+    - cx_Mat3 *    Vec3 -> cx_Vec3
+    - cx_Mat3 * cx_Vec3 -> cx_Vec3
+    -   float *    Mat3 ->    Mat3
+    -    Mat3 *   float ->    Mat3
+    -    Mat3 *    Mat3 ->    Mat3
+    -   float *    Mat4 ->    Mat4
+    -    Mat4 *   float ->    Mat4
+    -    Mat4 *    Mat4 ->    Mat4
+    -   float * cx_Mat3 -> cx_Mat3
+    - cx_Mat3 *   float -> cx_Mat3
+    - complex * cx_Mat3 -> cx_Mat3
+    - cx_Mat3 * complex -> cx_Mat3
+    - complex *    Mat3 -> cx_Mat3
+    -    Mat3 * complex -> cx_Mat3
+    - cx_Mat3 * cx_Mat3 -> cx_Mat3
+    - cx_Mat3 *    Mat3 -> cx_Mat3
+    -    Mat3 * cx_Mat3 -> cx_Mat3
+    -   float * MatrixD -> MatrixD
+    - MatrixD *   float -> MatrixD
+    - MatrixD * MatrixD -> MatrixD
+    -   float * MatrixZ -> MatrixZ
+    - MatrixZ *   float -> MatrixZ
+    - complex * MatrixZ -> MatrixZ
+    - MatrixZ * complex -> MatrixZ
+    - MatrixZ * MatrixZ -> MatrixZ
+
+- %
+    -    Vec3 %    Vec3 ->    Vec3 (Schur product)
+    -    Vec4 %    Vec4 ->    Vec4 (Schur product)
+    -    Vec5 %    Vec5 ->    Vec5 (Schur product)
+    - cx_Vec3 % cx_Vec3 -> cx_Vec3 (Schur product)
+
+====================
+Functions
+====================
+
+.. autofunction:: SpinToolkit_py.cross
+
+.. currentmodule:: SpinToolkit_py
+
+.. function:: normalize(x: SpinToolkit_py.Vec3) -> SpinToolkit_py.Vec3
+
+    Return :math:`\vec{x}/|\vec{x}|`.
+
+    :param x: The vector to be normalized.
+    :rtype: SpinToolkit_py.Vec3
+
+.. function:: normalize(x: SpinToolkit_py.Vec4) -> SpinToolkit_py.Vec4
+    :no-index:
+
+    Return :math:`\vec{x}/|\vec{x}|`.
+
+    :param x: The vector to be normalized.
+    :rtype: SpinToolkit_py.Vec4
+
+.. function:: normalize(x: SpinToolkit_py.Vec5) -> SpinToolkit_py.Vec5
+    :no-index:
+
+    Return :math:`\vec{x}/|\vec{x}|`.
+
+    :param x: The vector to be normalized.
+    :rtype: SpinToolkit_py.Vec5
+
+.. function:: normalize(x: SpinToolkit_py.cx_Vec3) -> SpinToolkit_py.cx_Vec3
+    :no-index:
+
+    Return :math:`\vec{x}/|\vec{x}|`.
+
+    :param x: The vector to be normalized.
+    :rtype: SpinToolkit_py.cx_Vec3
+
+.. function:: dot(x: SpinToolkit_py.Vec3, y: SpinToolkit_py.Vec3) -> float
+
+    Return :math:`\vec{x} \cdot \vec{y}`.
+
+    :param x: The first vector.
+    :param y: The second vector.
+    :rtype: float
+
+.. function:: dot(x: SpinToolkit_py.Vec4, y: SpinToolkit_py.Vec4) -> float
+    :no-index:
+
+    Return :math:`\vec{x} \cdot \vec{y}`.
+
+    :param x: The first vector.
+    :param y: The second vector.
+    :rtype: float
+
+.. function:: dot(x: SpinToolkit_py.Vec5, y: SpinToolkit_py.Vec5) -> float
+    :no-index:
+
+    Return :math:`\vec{x} \cdot \vec{y}`.
+
+    :param x: The first vector.
+    :param y: The second vector.
+    :rtype: float
+
+.. function:: kron(A: SpinToolkit_py.MatrixD, B: SpinToolkit_py.MatrixD) -> SpinToolkit_py.MatrixD
+
+    Return Kronecker tensor product. Given matrix :math:`_nA_p` and matrix :math:`_mB_q`, generates a matrix :math:`_{nm}C_{pq} = A \otimes B`.
+
+    :param A: The first matrix.
+    :param B: The second matrix.
+    :rtype: SpinToolkit_py.MatrixD
+
+.. function:: kron(A: SpinToolkit_py.MatrixZ, B: SpinToolkit_py.MatrixZ) -> SpinToolkit_py.MatrixZ
+    :no-index:
+
+    Return Kronecker tensor product. Given matrix :math:`_nA_p` and matrix :math:`_mB_q`, generates a matrix :math:`_{nm}C_{pq} = A \otimes B`.
+
+    :param A: The first matrix.
+    :param B: The second matrix.
+    :rtype: SpinToolkit_py.MatrixZ
+
+.. function:: solve(A: SpinToolkit_py.MatrixD, B: list[float]) -> list[float]
+
+    Solve :math:`A \vec{X} = B`, where A should be a square matrix.
+
+    :param A: The square matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: list[float]
+    :return: Solution X.
+
+.. function:: solve(A: SpinToolkit_py.MatrixZ, B: list[complex]) -> list[complex]
+    :no-index:
+
+    Solve :math:`A \vec{X} = B`, where A should be a square matrix.
+
+    :param A: The square matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: list[complex]
+    :return: Solution X.
+
+.. function:: solve(A: SpinToolkit_py.MatrixD, B: SpinToolkit_py.MatrixD) -> SpinToolkit_py.MatrixD
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a square matrix.
+
+    :param A: The square matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: SpinToolkit_py.MatrixD
+    :return: Solution X.
+
+.. function:: solve(A: SpinToolkit_py.MatrixZ, B: SpinToolkit_py.MatrixZ) -> SpinToolkit_py.MatrixZ
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a square matrix.
+
+    :param A: The square matrix on LHS.
+    :param B: RHS of the equation.
+    :rtype: SpinToolkit_py.MatrixZ
+    :return: Solution X.
+
+.. function:: solve_triangular(A: SpinToolkit_py.MatrixD, B: list[float], uplo: str) -> list[float]
+
+    Solve :math:`A \vec{X} = B`, where A should be a triangular matrix.
+
+    :param A: The triangular matrix on LHS.
+    :param B: RHS of the equation.
+    :param uplo: 'U': if A is upper triangular; 'L': if A is lower triangular.
+    :rtype: list[float]
+    :return: Solution X.
+
+.. function:: solve_triangular(A: SpinToolkit_py.MatrixZ, B: list[complex], uplo: str) -> list[complex]
+    :no-index:
+
+    Solve :math:`A \vec{X} = B`, where A should be a triangular matrix.
+
+    :param A: The triangular matrix on LHS.
+    :param B: RHS of the equation.
+    :param uplo: 'U': if A is upper triangular; 'L': if A is lower triangular.
+    :rtype: list[complex]
+    :return: Solution X.
+
+.. function:: solve_triangular(A: SpinToolkit_py.MatrixD, B: SpinToolkit_py.MatrixD, uplo: str) -> SpinToolkit_py.MatrixD
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a triangular matrix.
+
+    :param A: The triangular matrix on LHS.
+    :param B: RHS of the equation.
+    :param uplo: 'U': if A is upper triangular; 'L': if A is lower triangular.
+    :rtype: SpinToolkit_py.MatrixD
+    :return: Solution X.
+
+.. function:: solve_triangular(A: SpinToolkit_py.MatrixZ, B: SpinToolkit_py.MatrixZ, uplo: str) -> SpinToolkit_py.MatrixZ
+    :no-index:
+
+    Solve :math:`A X = B`, where A should be a triangular matrix.
+
+    :param A: The triangular matrix on LHS.
+    :param B: RHS of the equation.
+    :param uplo: 'U': if A is upper triangular; 'L': if A is lower triangular.
+    :rtype: SpinToolkit_py.MatrixZ
+    :return: Solution X.
+
+.. function:: chol(A: SpinToolkit_py.MatrixD, uplo: str) -> SpinToolkit_py.MatrixD
+
+    Cholesky decomposition: :math:`A = R^T R` (if uplo='U'), or :math:`A = R R^T` (if uplo='L').
+
+    :param A: The symmetric positive-definite matrix to be decomposed.
+    :param uplo: 'U'/'L': upper/lower half of A and R referenced.
+    :rtype: SpinToolkit_py.MatrixD
+    :return: The triangular matrix R.
+
+.. function:: chol(A: SpinToolkit_py.MatrixZ, uplo: str) -> SpinToolkit_py.MatrixZ
+    :no-index:
+
+    Cholesky decomposition: :math:`A = R^\dagger R` (if uplo='U'), or :math:`A = R R^\dagger` (if uplo='L').
+
+    :param A: The hermitian positive-definite matrix to be decomposed.
+    :param uplo: 'U'/'L': upper/lower half of A and R referenced.
+    :rtype: SpinToolkit_py.MatrixZ
+    :return: The triangular matrix R.
+
+.. function:: svd(A: SpinToolkit_py.MatrixD) -> tuple[SpinToolkit_py.MatrixD, list[float], SpinToolkit_py.MatrixD]
+
+    Singular Value Decomposition :math:`A = U S V^T`.
+
+    :param A: :math:`m\times n` matrix to be decomposed.
+    :Returns:
+        * **U** (*SpinToolkit_py.MatrixD*) - :math:`m\times m` orthogonal matrix.
+        * **s** (*list[float]*) - Singular values in descending order.
+        * **V** (*SpinToolkit_py.MatrixD*) - :math:`n\times n` orthogonal matrix.
+
+.. function:: svd(A: SpinToolkit_py.MatrixZ) -> tuple[SpinToolkit_py.MatrixZ, list[float], SpinToolkit_py.MatrixZ]
+    :no-index:
+
+    Singular Value Decomposition :math:`A = U S V^\dagger`.
+
+    :param A: :math:`m\times n` matrix to be decomposed.
+    :Returns:
+        * **U** (*SpinToolkit_py.MatrixZ*) - :math:`m\times m` unitary matrix U.
+        * **s** (*list[float]*) - Singular values in descending order.
+        * **V** (*SpinToolkit_py.MatrixZ*) - :math:`n\times n` unitary matrix.
+
+.. function:: eig_sym(A: SpinToolkit_py.MatrixD) -> tuple[list[float], SpinToolkit_py.MatrixD]
+
+    Eigen decomposition of a dense symmetric matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The symmetric matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
+        * **eigvec** (*SpinToolkit_py.MatrixD*) - The eigenvector matrix V.
+
+.. function:: eig_sym(A: SpinToolkit_py.MatrixZ) -> tuple[list[float], SpinToolkit_py.MatrixZ]
+    :no-index:
+
+    Eigen decomposition of a dense Hermitian matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The hermitian matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[float]*) - The eigenvalues in ascending order.
+        * **eigvec** (*SpinToolkit_py.MatrixZ*) - The eigenvector matrix V.
+
+.. function:: eig_gen(A: SpinToolkit_py.MatrixD) -> tuple[list[complex], SpinToolkit_py.MatrixD]
+
+    Eigen decomposition of a dense general square matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[complex]*) - The eigenvalues.
+        * **eigvec** (*SpinToolkit_py.MatrixD*) - The eigenvector matrix V.
+
+.. function:: eig_gen(A: SpinToolkit_py.MatrixZ) -> tuple[list[complex], SpinToolkit_py.MatrixZ]
+    :no-index:
+
+    Eigen decomposition of a dense general square matrix :math:`AV=V\text{diag}(e_0,\ldots,e_{n-1})`.
+
+    :param A: The matrix to be decomposed.
+    :Returns:
+        * **eigval** (*list[complex]*) - The eigenvalues.
+        * **eigvec** (*SpinToolkit_py.MatrixZ*) - The eigenvector matrix V.

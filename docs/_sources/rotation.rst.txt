@@ -1,0 +1,43 @@
+.. _rotation:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Class
+====================
+
+.. autoclass:: SpinToolkit_py.Mat3_rotation
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, omega: SpinToolkit_py.Vec3, theta: float)
+        :no-index:
+
+        Construct from axis and angle, :math:`R(\theta \hat{\omega})`.
+
+        :param omega: Rotation axis.
+        :param theta: Rotation angle.
+
+    .. method:: __init__(self, *, alpha: float, beta: float, gamma: float)
+        :no-index:
+
+        Construct from Euler angles (ZYZ convention), :math:`R(\alpha,\beta,\gamma)=R(\alpha \hat{e}_z) R(\beta \hat{e}_y) R(\gamma \hat{e}_z)`.
+
+        :param alpha: The first rotation angle :math:`\alpha` around the Z-axis, :math:`0\le \alpha \lt 2\pi`.
+        :param beta: The second rotation angle :math:`\beta` around the Y-axis. :math:`0\le \beta \le \pi`.
+        :param gamma: The third rotation angle :math:`\gamma` around the Z-axis. :math:`0 \le \gamma \lt 2\pi`.
+
+    .. method:: __init__(self, *, vi: SpinToolkit_py.Vec3, vf: SpinToolkit_py.Vec3)
+        :no-index:
+
+        Construct from two vectors, :math:`R \, \vec{v}_i = \vec{v}_f`.
+
+        :param vi: The starting vector.
+        :param vf: The target vector.

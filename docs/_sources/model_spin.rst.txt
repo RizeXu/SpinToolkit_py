@@ -1,0 +1,165 @@
+.. _model_spin:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Class
+====================
+
+.. autoclass:: SpinToolkit_py.model_spin
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, S: float, mode: str, lattice: SpinToolkit_py.lattice, verbose: bool = True)
+        :no-index:
+
+        Construct from spin magnitude，mode and lattice.
+
+        :param S: Magnitude of the spins.
+        :param mode: Choose from {"dipole", "SU(N)", "RPA"}.
+        :param lattice: Underlying lattice.
+        :param verbose: If true, print detailed info in console. (Default: True)
+
+
+====================
+Functions
+====================
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spin_cart2spherical(*, s: list[float]) -> tuple[float, float]
+
+    Convert spin dipole from Cartesian representation to spherical angles.
+
+    .. math::
+
+       \begin{pmatrix} s^x \\ s^y \\ s^z \end{pmatrix}
+       = r
+       \begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix}.
+
+    :param s: :math:`[s^x, s^y, s^z]`.
+    :Returns:
+
+        .. raw:: html
+
+            <br>
+
+        * **theta** (*float*) - Polar angle.
+        * **phi** (*float*) - Azimuthal angle.
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spin_cart2spherical(*, Z: list[complex]) -> list[float]
+    :no-index:
+
+    Convert SU(N) coherent state from complex numbers to Euler angles.
+
+    .. math::
+
+       \begin{pmatrix}
+         Z^0 \\
+         Z^1 \\
+         \vdots \\
+         Z^{N-1}
+       \end{pmatrix}
+       = e^{i \phi^0}
+       \begin{pmatrix}
+         e^{i \phi^{N-1}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\sin\theta^{N-1}\\
+         e^{i \phi^{N-2}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\cos\theta^{N-1}\\
+         \vdots\\
+         e^{i \phi^{2}}\sin\theta^{1}\sin\theta^{2}\cos\theta^{3}\\
+         e^{i \phi^{1}}\sin\theta^{1}\cos\theta^{2}\\
+         \cos\theta^{1}
+       \end{pmatrix}.
+
+    :param Z: Length-N list of SU(N) coherent state in complex numbers: :math:`[Z^0,Z^1,\ldots,Z^{N-1}]`  (normalization :math:`|\vec{Z}|=1` required).
+    :rtype: list[float]
+    :return: Length-(2N-2) list of SU(N) coherent state in Euler angles: :math:`[\theta^1,\theta^2,\ldots,\theta^{N-1},\phi^1,\phi^2,\ldots,\phi^{N-1}]`.
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spin_spherical2cart(*, theta: float, phi: float) -> list[float]
+
+    Convert spin dipole from spherical angles to Cartesian representation.
+
+    .. math::
+
+       \begin{pmatrix} s^x \\ s^y \\ s^z \end{pmatrix}
+       =
+       \begin{pmatrix} \sin \theta \cos \phi \\ \sin \theta \sin \phi \\ \cos \theta \end{pmatrix}.
+
+    :param theta: Polar angle.
+    :param phi: Azimuthal angle.
+    :rtype: list[float]
+    :return: :math:`[s^x, s^y, s^z]`.
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spin_spherical2cart(*, theta_phi: list[float]) -> list[complex]
+    :no-index:
+
+    Convert SU(N) coherent state from Euler angles to complex numbers.
+
+    .. math::
+
+       \begin{pmatrix}
+         Z^0 \\
+         Z^1 \\
+         \vdots \\
+         Z^{N-1}
+       \end{pmatrix}
+       =
+       \begin{pmatrix}
+         e^{i \phi^{N-1}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\sin\theta^{N-1}\\
+         e^{i \phi^{N-2}}\sin\theta^{1}\sin\theta^{2} \cdots\sin\theta^{N-2}\cos\theta^{N-1}\\
+         \vdots\\
+         e^{i \phi^{2}}\sin\theta^{1}\sin\theta^{2}\cos\theta^{3}\\
+         e^{i \phi^{1}}\sin\theta^{1}\cos\theta^{2}\\
+         \cos\theta^{1}
+       \end{pmatrix}.
+
+    :param theta_phi: Length-(2N-2) list of SU(N) coherent state in Euler angles: :math:`[\theta^1,\theta^2,\ldots,\theta^{N-1},\phi^1,\phi^2,\ldots,\phi^{N-1}]`.
+    :rtype: list[complex]
+    :return: Length-N list of SU(N) coherent state in complex numbers: :math:`[Z^0,Z^1,\ldots,Z^{N-1}]`.
+
+.. autofunction:: SpinToolkit_py.set_Ising_random
+.. autofunction:: SpinToolkit_py.set_dipole_random
+.. autofunction:: SpinToolkit_py.set_SUN_random
+.. autofunction:: SpinToolkit_py.set_RPA_random
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spins_magnetization(*, s: list[SpinToolkit_py.Vec3], S: float) -> tuple[float, float, float]
+
+    Compute average magnetization of spin dipoles.
+
+    :param s: List of spin dipoles (normalization :math:`|\vec{s}_i|=1` required).
+    :param S: Magnitude of the spins.
+    :Returns:
+
+        .. raw:: html
+
+            <br>
+
+        * **mx** (*float*) - Average magnetization along x-direction.
+        * **my** (*float*) - Average magnetization along y-direction.
+        * **mz** (*float*) - Average magnetization along z-direction.
+
+.. currentmodule:: SpinToolkit_py
+.. function:: spins_magnetization(*, Z: list[list[complex]]) -> tuple[float, float, float]
+    :no-index:
+
+    Compute average magnetization of SU(N) coherent states.
+
+    :param Z: List of SU(N) coherent states (normalization :math:`|\vec{Z}_i|=1` required).
+    :Returns:
+
+        .. raw:: html
+
+            <br>
+
+        * **mx** (*float*) - Average magnetization along x-direction.
+        * **my** (*float*) - Average magnetization along y-direction.
+        * **mz** (*float*) - Average magnetization along z-direction.

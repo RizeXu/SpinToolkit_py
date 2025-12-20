@@ -1,0 +1,524 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class &mdash; SpinToolkit v1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6ac6f732"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Class" href="model_spin.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SpinToolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Indices and Tables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search Page</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lattice</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.lattice"><code class="docutils literal notranslate"><span class="pre">lattice</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.__init__"><code class="docutils literal notranslate"><span class="pre">lattice.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.coor2cart"><code class="docutils literal notranslate"><span class="pre">lattice.coor2cart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.bond_length_min"><code class="docutils literal notranslate"><span class="pre">lattice.bond_length_min()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.coor2site"><code class="docutils literal notranslate"><span class="pre">lattice.coor2site()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.coor2supercell0"><code class="docutils literal notranslate"><span class="pre">lattice.coor2supercell0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.k2superBZ"><code class="docutils literal notranslate"><span class="pre">lattice.k2superBZ()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.l0"><code class="docutils literal notranslate"><span class="pre">lattice.l0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.l1"><code class="docutils literal notranslate"><span class="pre">lattice.l1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.l2"><code class="docutils literal notranslate"><span class="pre">lattice.l2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.polarization_matrix"><code class="docutils literal notranslate"><span class="pre">lattice.polarization_matrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.q_tilted"><code class="docutils literal notranslate"><span class="pre">lattice.q_tilted()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.site2coor"><code class="docutils literal notranslate"><span class="pre">lattice.site2coor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.total_sites"><code class="docutils literal notranslate"><span class="pre">lattice.total_sites()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.basis_A"><code class="docutils literal notranslate"><span class="pre">lattice.basis_A</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.basis_B"><code class="docutils literal notranslate"><span class="pre">lattice.basis_B</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.basis_a"><code class="docutils literal notranslate"><span class="pre">lattice.basis_a</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.basis_b"><code class="docutils literal notranslate"><span class="pre">lattice.basis_b</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.dim"><code class="docutils literal notranslate"><span class="pre">lattice.dim</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.num_sub"><code class="docutils literal notranslate"><span class="pre">lattice.num_sub</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.lattice.pos_sub"><code class="docutils literal notranslate"><span class="pre">lattice.pos_sub</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html">Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spin Wave</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#core-functions">Core Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#extension-functions">Extension Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classical Monte Carlo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mc_classical.html">Classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Rotation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crystal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Units</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#allowed-operators">Allowed Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SpinToolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Class</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lattice.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="lattice">SpinToolkit python documentation</p>
+<section id="class">
+<h1>Class<a class="headerlink" href="#class" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">lattice</span></span><a class="headerlink" href="#SpinToolkit_py.lattice" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SpinToolkit_py.lattice.__init__" title="Link to this definition"></a></dt>
+<dd><p>Default constructor.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">basis_a</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_sub</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Construct an untilted lattice (<span class="math notranslate nohighlight">\(\boldsymbol{A}_j \parallel \boldsymbol{a}_j\)</span>) from a given basis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>basis_a</strong> – Real-space basis vectors <span class="math notranslate nohighlight">\([\boldsymbol{a}_0, \boldsymbol{a}_1, \ldots]\)</span>.</p></li>
+<li><p><strong>pos_sub</strong> – List of sublattice coordinates in units of the basis <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span>.</p></li>
+<li><p><strong>l</strong> – List of linear dimensions along each basis direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Construct an untilted lattice (<span class="math notranslate nohighlight">\(\boldsymbol{A}_j \parallel \boldsymbol{a}_j\)</span>) from a built-in name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – Name of the lattice. Choose from [chain, square, triangular, kagome, honeycomb, cubic, fcc, triangular-stacked, pyrochlore, pyrochlore-16, pyrochlore-111].</p></li>
+<li><p><strong>l</strong> – List of linear dimensions along each basis direction.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Construct a general lattice from a user-defined TOML file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – Name of the toml file.</p>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>The TOML file must specify the lattice geometry and sublattice structure with the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dim</span></code> : Spatial dimension (1, 2, or 3).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a0</span></code>, <code class="docutils literal notranslate"><span class="pre">a1</span></code>, <code class="docutils literal notranslate"><span class="pre">a2</span></code> : Basis vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span> as floating-point arrays.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A0</span></code>, <code class="docutils literal notranslate"><span class="pre">A1</span></code>, <code class="docutils literal notranslate"><span class="pre">A2</span></code> : Superlattice basis vectors <span class="math notranslate nohighlight">\(\boldsymbol{A}_j\)</span> expressed as integer coefficients of the crystal basis.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num_sub</span></code> : Number of sublattices.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pos_sub0</span></code>, <code class="docutils literal notranslate"><span class="pre">pos_sub1</span></code>, … : Sublattice coordinates in units of the basis <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">[[sub0]]</span></code>, <code class="docutils literal notranslate"><span class="pre">[[sub1]]</span></code>, … : Arrays of sublattice sites, where each entry contains a <code class="docutils literal notranslate"><span class="pre">site</span></code> field
+with integer coordinates specifying the position within the superlattice.</p></li>
+</ul>
+<p>The superlattice basis vectors <span class="math notranslate nohighlight">\(\boldsymbol{A}_j\)</span> are not required to be parallel to the crystal
+basis vectors <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span>, allowing for flexible magnetic unit cell definitions compatible
+with various ordering wave vectors.</p>
+<p class="rubric">Example</p>
+<p>Triangular lattice with 120° ordering (K-point):</p>
+<div class="highlight-toml notranslate"><div class="highlight"><pre><span></span><span class="n">dim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+
+<span class="n">a0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">]</span>
+<span class="n">a1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">-0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.86602540378443865</span><span class="w"> </span><span class="p">]</span>
+
+<span class="n">A0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span>
+<span class="n">A1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">]</span>
+
+<span class="n">num_sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<span class="n">pos_sub0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="p">]</span>
+
+<span class="k">[[sub0]]</span>
+<span class="n">site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span>
+<span class="k">[[sub0]]</span>
+<span class="n">site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]</span>
+<span class="k">[[sub0]]</span>
+<span class="n">site</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.coor2cart">
+<span class="sig-name descname"><span class="pre">coor2cart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.coor2cart" title="Link to this definition"></a></dt>
+<dd><p>Calculate Cartesian coordinate <span class="math notranslate nohighlight">\([x,y,z]= \sum_i m_i \boldsymbol{a}_i\)</span> with given coordinate <span class="math notranslate nohighlight">\(m_i\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cartesian coordinate <span class="math notranslate nohighlight">\([x,y,z]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">coor2cart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span></dt>
+<dd><p>Calculate Cartesian coordinates <span class="math notranslate nohighlight">\([x,y,z]= \sum_i m_i \boldsymbol{a}_i + \vec{d}\)</span> with
+given coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and sublattice index (<span class="math notranslate nohighlight">\(\vec{d}\)</span> accounts for the displacement of the sublattice).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span>.</p></li>
+<li><p><strong>sub</strong> – Index of sublattice.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[float]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Cartesian coordinate <span class="math notranslate nohighlight">\([x,y,z]\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.bond_length_min">
+<span class="sig-name descname"><span class="pre">bond_length_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.bond_length_min" title="Link to this definition"></a></dt>
+<dd><p>Returns the length of the shortest bond.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.coor2site">
+<span class="sig-name descname"><span class="pre">coor2site</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.coor2site" title="Link to this definition"></a></dt>
+<dd><p>Calculate site index with given coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and sublattice index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span> of site.</p></li>
+<li><p><strong>sub</strong> – Index of sublattice.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Index of site.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.coor2supercell0">
+<span class="sig-name descname"><span class="pre">coor2supercell0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">coor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.coor2supercell0" title="Link to this definition"></a></dt>
+<dd><p>Decompose a coordinate into its 1st supercell component and supercell index.</p>
+<p>Given coordinate <span class="math notranslate nohighlight">\((m_0, m_1, ...)\)</span>, decompose as</p>
+<div class="math notranslate nohighlight">
+\[\sum_i m_i \boldsymbol{a}_i =  \tilde{\boldsymbol{r}} + \sum_i m_i^0 \boldsymbol{a}_i,\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\boldsymbol{r}} \equiv \sum_i M_i \boldsymbol{A}_i,\]</div>
+<p>and <span class="math notranslate nohighlight">\(m_i^0\)</span> is located in the 1st supercell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>coor</strong> – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>coor0</strong> (<em>list[int]</em>) – Coordinate <span class="math notranslate nohighlight">\([m_0^0, m_1^0, \ldots]\)</span>.</p></li>
+<li><p><strong>M</strong> (<em>list[int]</em>) – Supercell index <span class="math notranslate nohighlight">\([M_0, M_1, \ldots]\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.k2superBZ">
+<span class="sig-name descname"><span class="pre">k2superBZ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.k2superBZ" title="Link to this definition"></a></dt>
+<dd><p>Decompose a k-vector into the superlattice BZ.</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{k} = \boldsymbol{K} + \tilde{\boldsymbol{k}},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{k}=\sum_i k_i \boldsymbol{b}_i,\]</div>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{K} = \sum_i K_i \boldsymbol{B}_i,\quad K_i \in \text{Integers}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\boldsymbol{k}} = \sum_i \tilde{k}_i \boldsymbol{B}_i, \quad \tilde{k}_i \in [0,\,1).\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> – Coordinate <span class="math notranslate nohighlight">\([k_0, k_1, \ldots ]\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>K</strong> (<em>list[int]</em>) – Coordinate <span class="math notranslate nohighlight">\([K_0, K_1, \ldots ]\)</span>.</p></li>
+<li><p><strong>ktilde</strong> (<em>list[float]</em>) – Coordinate <span class="math notranslate nohighlight">\([\tilde{k}_0, \tilde{k}_1, \ldots ]\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.l0">
+<span class="sig-name descname"><span class="pre">l0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.l0" title="Link to this definition"></a></dt>
+<dd><p>Linear size along <span class="math notranslate nohighlight">\(\boldsymbol{a}_0\)</span> direction for untilted lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Linear size l0.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.l1">
+<span class="sig-name descname"><span class="pre">l1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.l1" title="Link to this definition"></a></dt>
+<dd><p>Linear size along <span class="math notranslate nohighlight">\(\boldsymbol{a}_1\)</span> direction for untilted lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Linear size l1.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.l2">
+<span class="sig-name descname"><span class="pre">l2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.l2" title="Link to this definition"></a></dt>
+<dd><p>Linear size along <span class="math notranslate nohighlight">\(\boldsymbol{a}_2\)</span> direction for untilted lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Linear size l2.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.polarization_matrix">
+<span class="sig-name descname"><span class="pre">polarization_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Mat3" title="SpinToolkit_py.Mat3"><span class="pre">SpinToolkit_py.Mat3</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.polarization_matrix" title="Link to this definition"></a></dt>
+<dd><p>Return the polarization matrix <span class="math notranslate nohighlight">\((\delta^{\mu \nu} - \hat{k}^\mu \hat{k}^\nu)\)</span>, where <span class="math notranslate nohighlight">\(\mu, \nu = \{x, y, z\}\)</span> (only support dim=3 at the moment).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k</strong> – Momentum in units of the basis <span class="math notranslate nohighlight">\(\boldsymbol{b}_j\)</span>: <span class="math notranslate nohighlight">\(\boldsymbol{k} = \sum_j k_j \boldsymbol{b}_j\)</span>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.q_tilted">
+<span class="sig-name descname"><span class="pre">q_tilted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.q_tilted" title="Link to this definition"></a></dt>
+<dd><p>Return true if any direction tilted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the superlattice basis <span class="math notranslate nohighlight">\(A\)</span> is not a diagonal matrix.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.site2coor">
+<span class="sig-name descname"><span class="pre">site2coor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.site2coor" title="Link to this definition"></a></dt>
+<dd><p>Calculate coordinate <span class="math notranslate nohighlight">\(m_i\)</span> and sublattice index with given site index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>site</strong> – Index of site.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>coor</strong> (<em>list[int]</em>) – Coordinate <span class="math notranslate nohighlight">\([m_0, m_1, \ldots]\)</span> of site.</p></li>
+<li><p><strong>sub</strong> (<em>int</em>) – Index of sublattice.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.total_sites">
+<span class="sig-name descname"><span class="pre">total_sites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.lattice.total_sites" title="Link to this definition"></a></dt>
+<dd><p>Total number of lattice sites (L) in the magnetic unit cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Total number of lattice sites (L) in the magnetic unit cell.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.basis_A">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">basis_A</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.basis_A" title="Link to this definition"></a></dt>
+<dd><p>Superlattice basis in matrix format (column <span class="math notranslate nohighlight">\(j \rightarrow \boldsymbol{A}_j\)</span>) in units of <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.basis_B">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">basis_B</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.basis_B" title="Link to this definition"></a></dt>
+<dd><p>Reciprocal superlattice basis in matrix format (column <span class="math notranslate nohighlight">\(j \rightarrow \boldsymbol{B}_j\)</span>) in units of <span class="math notranslate nohighlight">\(\boldsymbol{b}_j\)</span>.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.basis_a">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">basis_a</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.basis_a" title="Link to this definition"></a></dt>
+<dd><p>Real space basis in matrix format (column <span class="math notranslate nohighlight">\(j \rightarrow \boldsymbol{a}_j\)</span>).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.basis_b">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">basis_b</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.basis_b" title="Link to this definition"></a></dt>
+<dd><p>Reciprocal space basis in matrix format (column <span class="math notranslate nohighlight">\(j \rightarrow \boldsymbol{b}_j\)</span>).</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.dim">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dim</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.dim" title="Link to this definition"></a></dt>
+<dd><p>Dimension of the lattice.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.num_sub">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">num_sub</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.num_sub" title="Link to this definition"></a></dt>
+<dd><p>Number of sublattices.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.lattice.pos_sub">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">pos_sub</span></span><a class="headerlink" href="#SpinToolkit_py.lattice.pos_sub" title="Link to this definition"></a></dt>
+<dd><p>Sublattice coordinates in units of <span class="math notranslate nohighlight">\(\boldsymbol{a}_j\)</span>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="model_spin.html" class="btn btn-neutral float-right" title="Class" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, spintoolkit-dev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

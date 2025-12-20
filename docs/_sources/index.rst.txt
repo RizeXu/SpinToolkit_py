@@ -1,0 +1,65 @@
+SpinToolkit
+============================
+
+This is the documentation of Python API for the SpinToolkit library.
+
+.. toctree::
+   :caption: Indices and Tables
+
+   genindex
+   modindex
+   search
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lattice
+
+   lattice
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Model
+
+   model_spin
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Spin Wave
+
+   spinwave
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Classical Monte Carlo
+
+   mc_classical
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Rotation
+
+   rotation
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Crystal
+
+   crystal
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Units
+
+   units
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Linear Algebra
+
+   linear_algebra
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Miscellaneous Functions
+
+   miscellaneous

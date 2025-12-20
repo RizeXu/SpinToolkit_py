@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes &mdash; SpinToolkit v1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6ac6f732"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classes" href="mc_classical.html" />
+    <link rel="prev" title="Class" href="model_spin.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            SpinToolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Indices and Tables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search Page</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lattice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lattice.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html">Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spin Wave</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.k_cut"><code class="docutils literal notranslate"><span class="pre">k_cut</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.__init__"><code class="docutils literal notranslate"><span class="pre">k_cut.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.add_k"><code class="docutils literal notranslate"><span class="pre">k_cut.add_k()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.add_k_discrete"><code class="docutils literal notranslate"><span class="pre">k_cut.add_k_discrete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.add_k_single"><code class="docutils literal notranslate"><span class="pre">k_cut.add_k_single()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.jump_k"><code class="docutils literal notranslate"><span class="pre">k_cut.jump_k()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.prt"><code class="docutils literal notranslate"><span class="pre">k_cut.prt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.size"><code class="docutils literal notranslate"><span class="pre">k_cut.size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.k_list"><code class="docutils literal notranslate"><span class="pre">k_cut.k_list</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_cut.len_list"><code class="docutils literal notranslate"><span class="pre">k_cut.len_list</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.k_map"><code class="docutils literal notranslate"><span class="pre">k_map</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_map.__init__"><code class="docutils literal notranslate"><span class="pre">k_map.__init__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_map.size"><code class="docutils literal notranslate"><span class="pre">k_map.size()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#SpinToolkit_py.k_map.k_list"><code class="docutils literal notranslate"><span class="pre">k_map.k_list</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#core-functions">Core Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.SSSF"><code class="docutils literal notranslate"><span class="pre">SSSF()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.DOS_LSW"><code class="docutils literal notranslate"><span class="pre">DOS_LSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.DOS_GLSW"><code class="docutils literal notranslate"><span class="pre">DOS_GLSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.DSSF_GLSW"><code class="docutils literal notranslate"><span class="pre">DSSF_GLSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.DSSF_LSW"><code class="docutils literal notranslate"><span class="pre">DSSF_LSW()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#extension-functions">Extension Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.generate_lsw_mat"><code class="docutils literal notranslate"><span class="pre">generate_lsw_mat()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.generate_glsw_mat"><code class="docutils literal notranslate"><span class="pre">generate_glsw_mat()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.Bogoliubov"><code class="docutils literal notranslate"><span class="pre">Bogoliubov()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.fourier_spin"><code class="docutils literal notranslate"><span class="pre">fourier_spin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#SpinToolkit_py.fourier_spin_fft"><code class="docutils literal notranslate"><span class="pre">fourier_spin_fft()</span></code></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classical Monte Carlo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mc_classical.html">Classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Rotation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crystal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Units</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#allowed-operators">Allowed Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SpinToolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Classes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/spinwave.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p id="spinwave">SpinToolkit python documentation</p>
+<section id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">k_cut</span></span><a class="headerlink" href="#SpinToolkit_py.k_cut" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Trajectories in k space</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.__init__" title="Link to this definition"></a></dt>
+<dd><p>Constructor.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – The lattice.</p></li>
+<li><p><strong>density</strong> – Number of points to interpolate between adjacent input momenta.
+(Default: 50)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.add_k">
+<span class="sig-name descname"><span class="pre">add_k</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.add_k" title="Link to this definition"></a></dt>
+<dd><p>Add new momentum k_new, ALONG WITH many points (determined by “density”) connected to the last momentum in the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k_new</strong> – The new momentum end point to be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.add_k_discrete">
+<span class="sig-name descname"><span class="pre">add_k_discrete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.add_k_discrete" title="Link to this definition"></a></dt>
+<dd><p>Add new momentum k_new, ALONG WITH points connected to the last momentum in the list.</p>
+<p>Here, only discrete <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>’s allowed on a finite lattice of size <span class="math notranslate nohighlight">\(\{l_0, l_1, ...\}\)</span> will be added.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k_new</strong> – The new momentum point to add.</p></li>
+<li><p><strong>l</strong> – The finite lattice dimensions.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.add_k_single">
+<span class="sig-name descname"><span class="pre">add_k_single</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.add_k_single" title="Link to this definition"></a></dt>
+<dd><p>Add new momentum k_new, while OMITTING all intermediate points connected to the last momentum in the list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k_new</strong> – The new momentum end point to be added.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.jump_k">
+<span class="sig-name descname"><span class="pre">jump_k</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_new</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.jump_k" title="Link to this definition"></a></dt>
+<dd><p>Replace the last momentum in k_list by k_new.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>k_new</strong> – The new momentum end point to replace the last one in k_list.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.prt">
+<span class="sig-name descname"><span class="pre">prt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.prt" title="Link to this definition"></a></dt>
+<dd><p>Print out the full list of momenta.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.size" title="Link to this definition"></a></dt>
+<dd><p>Return total number of momenta in the trajectory.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.k_list">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k_list</span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.k_list" title="Link to this definition"></a></dt>
+<dd><p>All momenta traversed (list[list[float]].</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_cut.len_list">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">len_list</span></span><a class="headerlink" href="#SpinToolkit_py.k_cut.len_list" title="Link to this definition"></a></dt>
+<dd><p>Length of the trajectory in k space (list[float]).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_map">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">k_map</span></span><a class="headerlink" href="#SpinToolkit_py.k_map" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>2D mesh in k space</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_map.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_map" title="SpinToolkit_py.k_map"><span class="pre">SpinToolkit_py.k_map</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">dim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">density</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#SpinToolkit_py.k_map.__init__" title="Link to this definition"></a></dt>
+<dd><p>Construct a parallelogram mesh in k space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dim</strong> – Dimension of the lattice.</p></li>
+<li><p><strong>density</strong> – Number of points along each linear dimension.</p></li>
+<li><p><strong>k0</strong> – Position of one vertex of the parallelogram.</p></li>
+<li><p><strong>k1</strong> – Position of one vertex of the parallelogram.</p></li>
+<li><p><strong>k2</strong> – Position of one vertex of the parallelogram.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_map.size">
+<span class="sig-name descname"><span class="pre">size</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_map" title="SpinToolkit_py.k_map"><span class="pre">SpinToolkit_py.k_map</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#SpinToolkit_py.k_map.size" title="Link to this definition"></a></dt>
+<dd><p>Return total number of momenta in the mesh.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="SpinToolkit_py.k_map.k_list">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">k_list</span></span><a class="headerlink" href="#SpinToolkit_py.k_map.k_list" title="Link to this definition"></a></dt>
+<dd><p>All momenta in the mesh (list[list[float]]).</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="core-functions">
+<h1>Core Functions<a class="headerlink" href="#core-functions" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.SSSF">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">SSSF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadening</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_or_eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.SSSF" title="Link to this definition"></a></dt>
+<dd><p>Calculate the static spin structure factor <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu \nu}(\boldsymbol{k})=S_{\boldsymbol{k}}^\mu S_{-\boldsymbol{k}}^\nu\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – Underlying lattice.</p></li>
+<li><p><strong>s</strong> – List of spins.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>broadening</strong> – “Lorentzian” or “Gaussian”.</p></li>
+<li><p><strong>sigma_or_eta</strong> – Broadening factor (<span class="math notranslate nohighlight">\(\sigma\)</span> in Gaussian function, or <span class="math notranslate nohighlight">\(\eta\)</span> in Lorentzian function). If sigma_or_eta=0, use discrete Fourier transform.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>Sxx</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{xx}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>Syy</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{yy}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>Szz</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{zz}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SxyPyx_R</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k})+\mathcal{S}^{yx}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SyzPzy_R</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k})+\mathcal{S}^{zy}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SzxPxz_R</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k})+\mathcal{S}^{xz}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SxyMyx_I</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{xy}(\boldsymbol{k})-\mathcal{S}^{yx}(\boldsymbol{k})\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k})-\mathcal{S}^{yx}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SyzMzy_I</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{yz}(\boldsymbol{k})-\mathcal{S}^{zy}(\boldsymbol{k})\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k})-\mathcal{S}^{zy}(\boldsymbol{k})\)</span>.</p></li>
+<li><p><strong>SzxMxz_I</strong> (<em>float</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{zx}(\boldsymbol{k})-\mathcal{S}^{xz}(\boldsymbol{k})\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k})-\mathcal{S}^{xz}(\boldsymbol{k})\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.DOS_LSW">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">DOS_LSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation" title="SpinToolkit_py.Mat3_rotation"><span class="pre">SpinToolkit_py.Mat3_rotation</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_2magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_3magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadening</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_or_eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.DOS_LSW" title="Link to this definition"></a></dt>
+<dd><p>Calculate the n-magnon density of states (DOS) <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span>
+and min/max n-magnon energies at given <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>,
+using dipole mode.</p>
+<p>Warning: should only be used with the minimal magnetic unit cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>R</strong> – Rotation matrices of all sites in the magnetic unit cell.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>omega_list</strong> – List of energies where <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span> are calculated.</p></li>
+<li><p><strong>maxeval_2magnon</strong> – Number of integration steps for computing the 2-magnon DOS. If &gt;= 10000 (then maxeval_3magnon must be set to 0), {dos, omega_min, omega_max} will be overwritten by the 2-magnon properties.</p></li>
+<li><p><strong>maxeval_3magnon</strong> – Number of integration steps for computing the 3-magnon DOS. If &gt;= 10000 (then maxeval_2magnon must be set to 0), {dos, omega_min, omega_max} will be overwritten by the 3-magnon properties.</p></li>
+<li><p><strong>broadening</strong> – “Lorentzian” or “Gaussian”.</p></li>
+<li><p><strong>sigma_or_eta</strong> – Broadening factor (<span class="math notranslate nohighlight">\(\sigma\)</span> in Gaussian function, or <span class="math notranslate nohighlight">\(\eta\)</span> in Lorentzian function). If sigma_or_eta&lt;=0, then dos is skipped (only calculate omega_min and omega_max if maxeval &gt;= 10000).</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dos</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>omega_min</strong> (<em>float</em>) – The minimal energy of the n-magnon band (if maxeval_2magnon &gt;= 10000, then 2-magnon; if maxeval_3magnon &gt;= 10000, then 3-magnon).</p></li>
+<li><p><strong>omega_max</strong> (<em>float</em>) – The maximal energy of the n-magnon band (if maxeval_2magnon &gt;= 10000, then 2-magnon; if maxeval_3magnon &gt;= 10000, then 3-magnon).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.DOS_GLSW">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">DOS_GLSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_2boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_3boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadening</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_or_eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.DOS_GLSW" title="Link to this definition"></a></dt>
+<dd><p>Calculate the n-boson density of states (DOS) <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span>
+and min/max n-boson energies at given <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span>,
+using SU(N) mode.</p>
+<p>Warning: should only be used with the minimal magnetic unit cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>omega_list</strong> – List of energies where <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span> are calculated.</p></li>
+<li><p><strong>maxeval_2boson</strong> – Number of integration steps for computing the 2-boson DOS. If &gt;= 10000 (then maxeval_3boson must be set to 0), {dos, omega_min, omega_max} will be overwritten by the 2-boson properties.</p></li>
+<li><p><strong>maxeval_3boson</strong> – Number of integration steps for computing the 3-boson DOS. If &gt;= 10000 (then maxeval_2boson must be set to 0), {dos, omega_min, omega_max} will be overwritten by the 3-boson properties.</p></li>
+<li><p><strong>broadening</strong> – “Lorentzian” or “Gaussian”.</p></li>
+<li><p><strong>sigma_or_eta</strong> – Broadening factor (<span class="math notranslate nohighlight">\(\sigma\)</span> in Gaussian function, or <span class="math notranslate nohighlight">\(\eta\)</span> in Lorentzian function). If sigma_or_eta&lt;=0, then dos is skipped (only calculate omega_min and omega_max if maxeval &gt;= 10000).</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>dos</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{D}_n(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>omega_min</strong> (<em>float</em>) – The minimal energy of the n-boson band (if maxeval_2boson &gt;= 10000, then 2-boson; if maxeval_3boson &gt;= 10000, then 3-boson).</p></li>
+<li><p><strong>omega_max</strong> (<em>float</em>) – The maximal energy of the n-boson band (if maxeval_2boson &gt;= 10000, then 2-boson; if maxeval_3boson &gt;= 10000, then 3-boson).</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.DSSF_GLSW">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">DSSF_GLSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_1boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_2boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_3boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_0boson</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadening</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_or_eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.DSSF_GLSW" title="Link to this definition"></a></dt>
+<dd><p>Calculate the dispersion <span class="math notranslate nohighlight">\(\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}\)</span>
+and the dynamic spin structure factor (DSSF) <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>,
+using SU(N) mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>T</strong> – Temperature.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>omega_list</strong> – List of energies where <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu \nu}(\boldsymbol{k},\omega)\)</span> are calculated.</p></li>
+<li><p><strong>eval_1boson</strong> – If true, the spectral weight of 1-boson excitation <span class="math notranslate nohighlight">\(\mathcal{S}_1^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_2boson</strong> – Number of integration steps for computing the 2-boson DSSF. If &gt;= 10000, the free 2-boson continuum <span class="math notranslate nohighlight">\(\mathcal{S}_2^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_3boson</strong> – Number of integration steps for computing the 3-boson DSSF. If &gt;= 10000, the free 3-boson continuum <span class="math notranslate nohighlight">\(\mathcal{S}_3^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_0boson</strong> – Number of integration steps for computing the 0-boson DSSF (finite-T transition between excited states). If &gt;= 10000 and T &gt; 0, the free 0-boson continuum <span class="math notranslate nohighlight">\(\mathcal{S}_0^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>broadening</strong> – “Lorentzian” or “Gaussian”.</p></li>
+<li><p><strong>sigma_or_eta</strong> – Broadening factor (<span class="math notranslate nohighlight">\(\sigma\)</span> in Gaussian function, or <span class="math notranslate nohighlight">\(\eta\)</span> in Lorentzian function). If sigma_or_eta&lt;=0, then DSSF is skipped (only calculate dispersion).</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>disp</strong> (<em>list[float]</em>) – The dispersion <span class="math notranslate nohighlight">\(\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}\)</span>.</p></li>
+<li><p><strong>Sxx</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{xx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>Syy</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{yy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>Szz</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{zz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SxyPyx_R</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k},\omega) + \mathcal{S}^{yx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SyzPzy_R</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k},\omega) + \mathcal{S}^{zy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SzxPxz_R</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k},\omega) + \mathcal{S}^{xz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SxyMyx_I</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SyzMzy_I</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SzxMxz_I</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.DSSF_LSW">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">DSSF_LSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation" title="SpinToolkit_py.Mat3_rotation"><span class="pre">SpinToolkit_py.Mat3_rotation</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_1magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_2magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_3magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxeval_0magnon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">broadening</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_or_eta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.DSSF_LSW" title="Link to this definition"></a></dt>
+<dd><p>Calculate the dispersion <span class="math notranslate nohighlight">\(\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}\)</span> and the dynamic spin structure factor (DSSF) <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>, using dipole mode.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>R</strong> – Rotation matrices of all sites in the magnetic unit cell.</p></li>
+<li><p><strong>T</strong> – Temperature.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>omega_list</strong> – List of energies where <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu \nu}(\boldsymbol{k},\omega)\)</span> are calculated.</p></li>
+<li><p><strong>eval_1magnon</strong> – If true, the spectral weight of 1-magnon excitation <span class="math notranslate nohighlight">\(\mathcal{S}_1^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_2magnon</strong> – Number of integration steps for computing the 2-magnon DSSF. If &gt;= 10000, the free 2-magnon continuum <span class="math notranslate nohighlight">\(\mathcal{S}_2^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_3magnon</strong> – Number of integration steps for computing the 3-magnon DSSF. If &gt;= 10000, the free 3-magnon continuum <span class="math notranslate nohighlight">\(\mathcal{S}_3^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>maxeval_0magnon</strong> – Number of integration steps for computing the 0-magnon DSSF (finite-T transition between excited states). If &gt;= 10000 and T &gt; 0, the free 0-magnon continuum <span class="math notranslate nohighlight">\(\mathcal{S}_0^{\mu\nu}(\boldsymbol{k},\omega)\)</span> is included in <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>broadening</strong> – “Lorentzian” or “Gaussian”.</p></li>
+<li><p><strong>sigma_or_eta</strong> – Broadening factor (<span class="math notranslate nohighlight">\(\sigma\)</span> in Gaussian function, or <span class="math notranslate nohighlight">\(\eta\)</span> in Lorentzian function). If sigma_or_eta&lt;=0, then DSSF is skipped (only calculate dispersion).</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><br><ul class="simple">
+<li><p><strong>disp</strong> (<em>list[float]</em>) - The dispersion <span class="math notranslate nohighlight">\(\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}\)</span>.</p></li>
+<li><p><strong>Sxx</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{xx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>Syy</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{yy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>Szz</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{zz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SxyPyx_R</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k},\omega) + \mathcal{S}^{yx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SyzPzy_R</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k},\omega) + \mathcal{S}^{zy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SzxPxz_R</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k},\omega) + \mathcal{S}^{xz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SxyMyx_I</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SyzMzy_I</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>SzxMxz_I</strong> (<em>list[float]</em>) - <span class="math notranslate nohighlight">\(\left(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\right)/i\)</span>, i.e., imaginary part of <span class="math notranslate nohighlight">\(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\)</span>.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">DSSF_LSW</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_cut</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#SpinToolkit_py.k_cut" title="SpinToolkit_py.k_cut"><span class="pre">SpinToolkit_py.k_cut</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">omega_max</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxtime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename_prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'DSSF'</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the dynamic spin structure factor (DSSF) <span class="math notranslate nohighlight">\(\mathcal{S}_\text{quantum}^{\mu\nu}(\boldsymbol{k},\omega)\)</span> by equation of motion (EOM), using dipole mode.</p>
+<p>To compare with quantum mechanical results, we have multiplied the final intensities by <span class="math notranslate nohighlight">\(\beta \omega\)</span> (valid for <span class="math notranslate nohighlight">\(\beta \omega \gg 1\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{S}_\text{quantum}(\boldsymbol{k},\omega) = \beta \omega \mathcal{S}_\text{classical}(\boldsymbol{k},\omega).\]</div>
+<p>Note: for Hamiltonian which conserves magnetization in EOM, when <span class="math notranslate nohighlight">\(\mathrm{d}t \rightarrow 0\)</span> (exactly solving),
+there should be nothing at finite-omega at <span class="math notranslate nohighlight">\(\boldsymbol{k}=0\)</span> (just fourier transforming a constant).
+So, the tiny numbers at <span class="math notranslate nohighlight">\(\boldsymbol{k}=0\)</span> for small <span class="math notranslate nohighlight">\(\omega\)</span> are artifacts of the numerics with finite <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>.
+In fact, with small <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>, the weight at finite <span class="math notranslate nohighlight">\(\omega\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{k}=0\)</span> is indeed negligible;
+To fully suppress the weight, should use integrator which conserves magnetization in the future.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>k_cut</strong> – k-space trajectory for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>omega_min</strong> – Lower bound of the energy window for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>omega_max</strong> – Upper bound of the energy window for computing <span class="math notranslate nohighlight">\(\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)\)</span>.</p></li>
+<li><p><strong>dt</strong> – Time step size used the EOM.</p></li>
+<li><p><strong>maxtime</strong> – Total integration time.</p></li>
+<li><p><strong>dump_dir</strong> – The location where the initial equilibrium spin configuration should be prepared; also the location where the final output will be written to.</p></li>
+<li><p><strong>filename_prefix</strong> – Prefix of the output files (“xxx_half.dat” and “xxx_full.dat”). (Default: “DSSF”)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="extension-functions">
+<h1>Extension Functions<a class="headerlink" href="#extension-functions" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.generate_lsw_mat">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">generate_lsw_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_tilde</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation" title="SpinToolkit_py.Mat3_rotation"><span class="pre">SpinToolkit_py.Mat3_rotation</span></a><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.generate_lsw_mat" title="Link to this definition"></a></dt>
+<dd><p>Collect contributions from all terms in the model to the matrix <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span>, using dipole mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>k_tilde</strong> – The momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}\)</span>.</p></li>
+<li><p><strong>R</strong> – Rotation matrices of all sites in the magnetic unit cell.</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Hmat</strong> – The LSW matrix <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><em>MatrixZ</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.generate_glsw_mat">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">generate_glsw_mat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin" title="SpinToolkit_py.model_spin"><span class="pre">SpinToolkit_py.model_spin</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_tilde</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">SupportsFloat</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a></span></span><a class="headerlink" href="#SpinToolkit_py.generate_glsw_mat" title="Link to this definition"></a></dt>
+<dd><p>Collect contributions from all terms in the model to the matrix <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span>, using SU(N) mode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>model</strong> – Underlying model.</p></li>
+<li><p><strong>k_tilde</strong> – The momentum <span class="math notranslate nohighlight">\(\tilde{\boldsymbol{k}}\)</span>.</p></li>
+<li><p><strong>epsilon</strong> – Shift <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span> by a tiny positive number (<span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}\)</span>) to improve numerical stability.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Hmat</strong> – The GLSW matrix <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><em>MatrixZ</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.Bogoliubov">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">Bogoliubov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Hmat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ" title="SpinToolkit_py.MatrixZ"><span class="pre">SpinToolkit_py.MatrixZ</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.Bogoliubov" title="Link to this definition"></a></dt>
+<dd><p>Bogoliubov transformation.</p>
+<div class="math notranslate nohighlight">
+\[T_{\tilde{\boldsymbol{k}}}^\dagger H_{\tilde{\boldsymbol{k}}} T_{\tilde{\boldsymbol{k}}} = \text{diag}\{ \omega_{\tilde{\boldsymbol{k}},1},\omega_{\tilde{\boldsymbol{k}},2},\ldots, \omega_{-\tilde{\boldsymbol{k}},1},\omega_{-\tilde{\boldsymbol{k}},2},\ldots \},\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}T_{\tilde{\boldsymbol{k}}}= \begin{pmatrix} X_{\tilde{\boldsymbol{k}}} &amp; Y_{-\tilde{\boldsymbol{k}}}^{*}\\ Y_{\tilde{\boldsymbol{k}}} &amp; X_{-\tilde{\boldsymbol{k}}}^{*} \end{pmatrix}.\end{split}\]</div>
+<p>Additionally, we require <span class="math notranslate nohighlight">\(T_{\tilde{\boldsymbol{k}}}^\dagger \Sigma^z T_{\tilde{\boldsymbol{k}}} = \Sigma^z\)</span>,
+where <span class="math notranslate nohighlight">\(\Sigma^z = \sigma^z \otimes 1\)</span> is the para-unit matrix.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Hmat</strong> – The matrix <span class="math notranslate nohighlight">\(H_{\tilde{\boldsymbol{k}}}\)</span>.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>disp_k</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\{\omega_{\tilde{\boldsymbol{k}},1}, \omega_{\tilde{\boldsymbol{k}},2}, \ldots \}\)</span>.</p></li>
+<li><p><strong>disp_mk</strong> (<em>list[float]</em>) – <span class="math notranslate nohighlight">\(\{\omega_{-\tilde{\boldsymbol{k}},1}, \omega_{-\tilde{\boldsymbol{k}},2}, \ldots \}\)</span>.</p></li>
+<li><p><strong>X_k</strong> (<em>~SpinToolkit_py.MatrixZ</em>) – <span class="math notranslate nohighlight">\(X_{\tilde{\boldsymbol{k}}}\)</span>.</p></li>
+<li><p><strong>X_mk</strong> (<em>~SpinToolkit_py.MatrixZ</em>) – <span class="math notranslate nohighlight">\(X_{-\tilde{\boldsymbol{k}}}\)</span>.</p></li>
+<li><p><strong>Y_k</strong> (<em>~SpinToolkit_py.MatrixZ</em>) – <span class="math notranslate nohighlight">\(Y_{\tilde{\boldsymbol{k}}}\)</span>.</p></li>
+<li><p><strong>Y_mk</strong> (<em>~SpinToolkit_py.MatrixZ</em>) – <span class="math notranslate nohighlight">\(Y_{-\tilde{\boldsymbol{k}}}\)</span>.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.fourier_spin">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">fourier_spin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">complex</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.fourier_spin" title="Link to this definition"></a></dt>
+<dd><p>Fourier transform of spins.</p>
+<div class="math notranslate nohighlight">
+\[\vec{S}_{\boldsymbol{k}} = \frac{1}{\sqrt{L}} \sum_i e^{-i \boldsymbol{k} \cdot \boldsymbol{r}_i} \vec{S}_i,\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the total number of lattice sites.</p>
+<p>Note: <span class="math notranslate nohighlight">\(\{\boldsymbol{b}_0, \boldsymbol{b}_1, \ldots\}\)</span> are the basis of the original reciprocal space.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – Underlying lattice.</p></li>
+<li><p><strong>s</strong> – List of spins to be Fourier transformed.</p></li>
+<li><p><strong>k</strong> – <span class="math notranslate nohighlight">\([k_0, k_1, \ldots ]\)</span> that represents momentum <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>sub_index</strong> – Index of the sublattice to be used in the Fourier transform.
+If set to -1 (default), contributions from all sublattices will be added up.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>sx_k</strong> (<em>complex</em>) – The x-component of the Fourier transformed spins.</p></li>
+<li><p><strong>sy_k</strong> (<em>complex</em>) – The y-component of the Fourier transformed spins.</p></li>
+<li><p><strong>sz_k</strong> (<em>complex</em>) – The z-component of the Fourier transformed spins.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="SpinToolkit_py.fourier_spin_fft">
+<span class="sig-prename descclassname"><span class="pre">SpinToolkit_py.</span></span><span class="sig-name descname"><span class="pre">fourier_spin_fft</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice" title="SpinToolkit_py.lattice"><span class="pre">SpinToolkit_py.lattice</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List" title="SpinToolkit_py.Vec3List"><span class="pre">SpinToolkit_py.Vec3List</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">BZ</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sub_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">complex</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#SpinToolkit_py.fourier_spin_fft" title="Link to this definition"></a></dt>
+<dd><p>Fast Fourier transform of spins for all allowed momenta in a given BZ.</p>
+<div class="math notranslate nohighlight">
+\[\vec{S}_{\boldsymbol{k}}=\frac{1}{\sqrt{L}} \sum_{i} e^{-i \boldsymbol{k} \cdot \boldsymbol{r}_i} \vec{S}_{i},\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the total number of lattice sites.</p>
+<p>The index of <span class="math notranslate nohighlight">\(\boldsymbol{k}= \sum_i \frac{m_i}{l_i} \boldsymbol{b}_i + \boldsymbol{G}\)</span> (<span class="math notranslate nohighlight">\(m_i = 0,\ldots,l_i - 1\)</span>) is:</p>
+<p><span class="math notranslate nohighlight">\(m_0 + m_1 l_0 + m_2 l_0 l_1\)</span> (<span class="math notranslate nohighlight">\(D = 3\)</span>);</p>
+<p><span class="math notranslate nohighlight">\(m_0 + m_1 l_0\)</span> (<span class="math notranslate nohighlight">\(D = 2\)</span>);</p>
+<p><span class="math notranslate nohighlight">\(m_0\)</span> (<span class="math notranslate nohighlight">\(D = 1\)</span>).</p>
+<p>Note: <span class="math notranslate nohighlight">\(\{\boldsymbol{b}_0, \boldsymbol{b}_1, \ldots\}\)</span> are the basis of the original reciprocal space.</p>
+<p>Note: for now, only regular lattices (<span class="math notranslate nohighlight">\(\boldsymbol{A}_i \parallel \boldsymbol{a}_i\)</span>) are allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lattice</strong> – Underlying lattice.</p></li>
+<li><p><strong>s</strong> – List of spins to be Fourier transformed.</p></li>
+<li><p><strong>BZ</strong> – The indices of the BZ to be used: <span class="math notranslate nohighlight">\(\boldsymbol{G} = \sum_i \text{BZ}[i] \, \boldsymbol{b}_i\)</span>.</p></li>
+<li><p><strong>sub_index</strong> – Index of the sublattice to be used in the Fourier transform.
+If set to -1 (default), contributions from all sublattices will be added up.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><ul class="simple">
+<li><p><strong>sx_k</strong> (<em>list[complex]</em>) – The x-component of the Fourier transformed spins for all <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> in the specified BZ.</p></li>
+<li><p><strong>sy_k</strong> (<em>list[complex]</em>) – The y-component of the Fourier transformed spins for all <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> in the specified BZ.</p></li>
+<li><p><strong>sz_k</strong> (<em>list[complex]</em>) – The z-component of the Fourier transformed spins for all <span class="math notranslate nohighlight">\(\boldsymbol{k}\)</span> in the specified BZ.</p></li>
+</ul>
+</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="model_spin.html" class="btn btn-neutral float-left" title="Class" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mc_classical.html" class="btn btn-neutral float-right" title="Classes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, spintoolkit-dev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+.. _spinwave:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Classes
+====================
+
+.. autoclass:: SpinToolkit_py.k_cut
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. autoclass:: SpinToolkit_py.k_map
+    :special-members: __init__
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+====================
+Core Functions
+====================
+
+
+.. autofunction:: SpinToolkit_py.SSSF
+.. autofunction:: SpinToolkit_py.DOS_LSW
+.. autofunction:: SpinToolkit_py.DOS_GLSW
+.. autofunction:: SpinToolkit_py.DSSF_GLSW
+
+.. currentmodule:: SpinToolkit_py
+.. function:: DSSF_LSW(*,model: SpinToolkit_py.model_spin, R: list[SpinToolkit_py.Mat3_rotation], T: float, k: list[float], omega_list: list[float], eval_1magnon: bool, maxeval_2magnon: int, maxeval_3magnon: int, maxeval_0magnon: int, broadening: str, sigma_or_eta: float, epsilon: float) -> tuple[list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float]]
+
+    Calculate the dispersion :math:`\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}` and the dynamic spin structure factor (DSSF) :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`, using dipole mode.
+
+    :param model: Underlying model.
+    :param R: Rotation matrices of all sites in the magnetic unit cell.
+    :param T: Temperature.
+    :param k: :math:`[k_0, k_1, \ldots]` that represents momentum :math:`\boldsymbol{k}= \sum_i k_i \boldsymbol{b}_i`.
+    :param omega_list: List of energies where :math:`\mathcal{S}^{\mu \nu}(\boldsymbol{k},\omega)` are calculated.
+    :param eval_1magnon: If true, the spectral weight of 1-magnon excitation :math:`\mathcal{S}_1^{\mu\nu}(\boldsymbol{k},\omega)` is included in :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param maxeval_2magnon: Number of integration steps for computing the 2-magnon DSSF. If >= 10000, the free 2-magnon continuum :math:`\mathcal{S}_2^{\mu\nu}(\boldsymbol{k},\omega)` is included in :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param maxeval_3magnon: Number of integration steps for computing the 3-magnon DSSF. If >= 10000, the free 3-magnon continuum :math:`\mathcal{S}_3^{\mu\nu}(\boldsymbol{k},\omega)` is included in :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param maxeval_0magnon: Number of integration steps for computing the 0-magnon DSSF (finite-T transition between excited states). If >= 10000 and T > 0, the free 0-magnon continuum :math:`\mathcal{S}_0^{\mu\nu}(\boldsymbol{k},\omega)` is included in :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param broadening: "Lorentzian" or "Gaussian".
+    :param sigma_or_eta: Broadening factor (:math:`\sigma` in Gaussian function, or :math:`\eta` in Lorentzian function). If sigma_or_eta<=0, then DSSF is skipped (only calculate dispersion).
+    :param epsilon: Shift :math:`H_{\tilde{\boldsymbol{k}}}` by a tiny positive number (:math:`H_{\tilde{\boldsymbol{k}}} \rightarrow H_{\tilde{\boldsymbol{k}}} + \epsilon \mathbb{1}`) to improve numerical stability.
+
+    :Returns:
+
+        .. raw:: html
+
+            <br>
+
+        * **disp** (*list[float]*) - The dispersion :math:`\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}`.
+        * **Sxx** (*list[float]*) - :math:`\mathcal{S}^{xx}(\boldsymbol{k},\omega)`.
+        * **Syy** (*list[float]*) - :math:`\mathcal{S}^{yy}(\boldsymbol{k},\omega)`.
+        * **Szz** (*list[float]*) - :math:`\mathcal{S}^{zz}(\boldsymbol{k},\omega)`.
+        * **SxyPyx_R** (*list[float]*) - :math:`\mathcal{S}^{xy}(\boldsymbol{k},\omega) + \mathcal{S}^{yx}(\boldsymbol{k},\omega)`.
+        * **SyzPzy_R** (*list[float]*) - :math:`\mathcal{S}^{yz}(\boldsymbol{k},\omega) + \mathcal{S}^{zy}(\boldsymbol{k},\omega)`.
+        * **SzxPxz_R** (*list[float]*) - :math:`\mathcal{S}^{zx}(\boldsymbol{k},\omega) + \mathcal{S}^{xz}(\boldsymbol{k},\omega)`.
+        * **SxyMyx_I** (*list[float]*) - :math:`\left(\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)\right)/i`, i.e., imaginary part of :math:`\mathcal{S}^{xy}(\boldsymbol{k},\omega) - \mathcal{S}^{yx}(\boldsymbol{k},\omega)`.
+        * **SyzMzy_I** (*list[float]*) - :math:`\left(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\right)/i`, i.e., imaginary part of :math:`\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)`.
+        * **SzxMxz_I** (*list[float]*) - :math:`\left(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\right)/i`, i.e., imaginary part of :math:`\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)`.
+
+.. currentmodule:: SpinToolkit_py
+.. function:: DSSF_LSW(*,model: SpinToolkit_py.model_spin, k_cut: SpinToolkit_py.k_cut, omega_min: float, omega_max: float, dt: float, maxtime: float, dump_dir: str, filename_prefix: str = 'DSSF')
+    :no-index:
+
+    Calculate the dynamic spin structure factor (DSSF) :math:`\mathcal{S}_\text{quantum}^{\mu\nu}(\boldsymbol{k},\omega)` by equation of motion (EOM), using dipole mode.
+
+    To compare with quantum mechanical results, we have multiplied the final intensities by :math:`\beta \omega` (valid for :math:`\beta \omega \gg 1`):
+
+    .. math::
+
+       \mathcal{S}_\text{quantum}(\boldsymbol{k},\omega) = \beta \omega \mathcal{S}_\text{classical}(\boldsymbol{k},\omega).
+
+    Note: for Hamiltonian which conserves magnetization in EOM, when :math:`\mathrm{d}t \rightarrow 0` (exactly solving),
+    there should be nothing at finite-omega at :math:`\boldsymbol{k}=0` (just fourier transforming a constant).
+    So, the tiny numbers at :math:`\boldsymbol{k}=0` for small :math:`\omega` are artifacts of the numerics with finite :math:`\mathrm{d}t`.
+    In fact, with small :math:`\mathrm{d}t`, the weight at finite :math:`\omega` and :math:`\boldsymbol{k}=0` is indeed negligible;
+    To fully suppress the weight, should use integrator which conserves magnetization in the future.
+
+
+    :param model: Underlying model.
+    :param k_cut: k-space trajectory for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param omega_min: Lower bound of the energy window for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param omega_max: Upper bound of the energy window for computing :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`.
+    :param dt: Time step size used the EOM.
+    :param maxtime: Total integration time.
+    :param dump_dir: The location where the initial equilibrium spin configuration should be prepared; also the location where the final output will be written to.
+    :param filename_prefix: Prefix of the output files ("xxx_half.dat" and "xxx_full.dat"). (Default: "DSSF")
+
+====================
+Extension Functions
+====================
+
+.. autofunction:: SpinToolkit_py.generate_lsw_mat
+.. autofunction:: SpinToolkit_py.generate_glsw_mat
+.. autofunction:: SpinToolkit_py.Bogoliubov
+.. autofunction:: SpinToolkit_py.fourier_spin
+.. autofunction:: SpinToolkit_py.fourier_spin_fft

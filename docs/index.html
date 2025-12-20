@@ -1,0 +1,311 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SpinToolkit &mdash; SpinToolkit v1.4.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=08c4138a" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6ac6f732"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            SpinToolkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Indices and Tables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search Page</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lattice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lattice.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html">Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Spin Wave</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#core-functions">Core Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#extension-functions">Extension Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Classical Monte Carlo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mc_classical.html">Classes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Rotation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Crystal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Units</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Class</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Classes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#allowed-operators">Allowed Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#functions">Functions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Functions</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">SpinToolkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">SpinToolkit</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="spintoolkit">
+<h1>SpinToolkit<a class="headerlink" href="#spintoolkit" title="Link to this heading"></a></h1>
+<p>This is the documentation of Python API for the SpinToolkit library.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Indices and Tables</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="py-modindex.html">Module Index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="search.html">Search Page</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Lattice</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lattice.html">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lattice.html#SpinToolkit_py.lattice"><code class="docutils literal notranslate"><span class="pre">lattice</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.model_spin"><code class="docutils literal notranslate"><span class="pre">model_spin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="model_spin.html#functions">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.spin_cart2spherical"><code class="docutils literal notranslate"><span class="pre">spin_cart2spherical()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.spin_spherical2cart"><code class="docutils literal notranslate"><span class="pre">spin_spherical2cart()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.set_Ising_random"><code class="docutils literal notranslate"><span class="pre">set_Ising_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.set_dipole_random"><code class="docutils literal notranslate"><span class="pre">set_dipole_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.set_SUN_random"><code class="docutils literal notranslate"><span class="pre">set_SUN_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.set_RPA_random"><code class="docutils literal notranslate"><span class="pre">set_RPA_random()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="model_spin.html#SpinToolkit_py.spins_magnetization"><code class="docutils literal notranslate"><span class="pre">spins_magnetization()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Spin Wave</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.k_cut"><code class="docutils literal notranslate"><span class="pre">k_cut</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.k_map"><code class="docutils literal notranslate"><span class="pre">k_map</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#core-functions">Core Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.SSSF"><code class="docutils literal notranslate"><span class="pre">SSSF()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.DOS_LSW"><code class="docutils literal notranslate"><span class="pre">DOS_LSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.DOS_GLSW"><code class="docutils literal notranslate"><span class="pre">DOS_GLSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.DSSF_GLSW"><code class="docutils literal notranslate"><span class="pre">DSSF_GLSW()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.DSSF_LSW"><code class="docutils literal notranslate"><span class="pre">DSSF_LSW()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="spinwave.html#extension-functions">Extension Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.generate_lsw_mat"><code class="docutils literal notranslate"><span class="pre">generate_lsw_mat()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.generate_glsw_mat"><code class="docutils literal notranslate"><span class="pre">generate_glsw_mat()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.Bogoliubov"><code class="docutils literal notranslate"><span class="pre">Bogoliubov()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.fourier_spin"><code class="docutils literal notranslate"><span class="pre">fourier_spin()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="spinwave.html#SpinToolkit_py.fourier_spin_fft"><code class="docutils literal notranslate"><span class="pre">fourier_spin_fft()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Classical Monte Carlo</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="mc_classical.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mc_classical.html#SpinToolkit_py.mc_base"><code class="docutils literal notranslate"><span class="pre">mc_base</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_classical.html#SpinToolkit_py.mc_Ising"><code class="docutils literal notranslate"><span class="pre">mc_Ising</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_classical.html#SpinToolkit_py.mc_dipole"><code class="docutils literal notranslate"><span class="pre">mc_dipole</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="mc_classical.html#SpinToolkit_py.mc_SUN"><code class="docutils literal notranslate"><span class="pre">mc_SUN</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Rotation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rotation.html">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rotation.html#SpinToolkit_py.Mat3_rotation"><code class="docutils literal notranslate"><span class="pre">Mat3_rotation</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Crystal</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.BondRaw"><code class="docutils literal notranslate"><span class="pre">BondRaw</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.Bond"><code class="docutils literal notranslate"><span class="pre">Bond</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.SymOP"><code class="docutils literal notranslate"><span class="pre">SymOP</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.SiteSymmetry"><code class="docutils literal notranslate"><span class="pre">SiteSymmetry</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.Crystal"><code class="docutils literal notranslate"><span class="pre">Crystal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="crystal.html#functions">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.lattice_basis2angle"><code class="docutils literal notranslate"><span class="pre">lattice_basis2angle()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="crystal.html#SpinToolkit_py.lattice_angle2basis"><code class="docutils literal notranslate"><span class="pre">lattice_angle2basis()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Units</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html">Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#SpinToolkit_py.units"><code class="docutils literal notranslate"><span class="pre">units</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3"><code class="docutils literal notranslate"><span class="pre">Vec3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec4"><code class="docutils literal notranslate"><span class="pre">Vec4</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec5"><code class="docutils literal notranslate"><span class="pre">Vec5</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.cx_Vec3"><code class="docutils literal notranslate"><span class="pre">cx_Vec3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Mat3"><code class="docutils literal notranslate"><span class="pre">Mat3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Mat4"><code class="docutils literal notranslate"><span class="pre">Mat4</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.cx_Mat3"><code class="docutils literal notranslate"><span class="pre">cx_Mat3</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixD"><code class="docutils literal notranslate"><span class="pre">MatrixD</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.MatrixZ"><code class="docutils literal notranslate"><span class="pre">MatrixZ</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.spin_matrices"><code class="docutils literal notranslate"><span class="pre">spin_matrices</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.stevens_matrices"><code class="docutils literal notranslate"><span class="pre">stevens_matrices</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.Vec3List"><code class="docutils literal notranslate"><span class="pre">Vec3List</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.VecZList"><code class="docutils literal notranslate"><span class="pre">VecZList</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#allowed-operators">Allowed Operators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linear_algebra.html#functions">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.cross"><code class="docutils literal notranslate"><span class="pre">cross()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.normalize"><code class="docutils literal notranslate"><span class="pre">normalize()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.dot"><code class="docutils literal notranslate"><span class="pre">dot()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.kron"><code class="docutils literal notranslate"><span class="pre">kron()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.solve"><code class="docutils literal notranslate"><span class="pre">solve()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.solve_triangular"><code class="docutils literal notranslate"><span class="pre">solve_triangular()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.chol"><code class="docutils literal notranslate"><span class="pre">chol()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.svd"><code class="docutils literal notranslate"><span class="pre">svd()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.eig_sym"><code class="docutils literal notranslate"><span class="pre">eig_sym()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="linear_algebra.html#SpinToolkit_py.eig_gen"><code class="docutils literal notranslate"><span class="pre">eig_gen()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Miscellaneous Functions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="miscellaneous.html">Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.date_and_time"><code class="docutils literal notranslate"><span class="pre">date_and_time()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.total_omp_threads"><code class="docutils literal notranslate"><span class="pre">total_omp_threads()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.print_system_info"><code class="docutils literal notranslate"><span class="pre">print_system_info()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.round2int"><code class="docutils literal notranslate"><span class="pre">round2int()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.save_state_dipole"><code class="docutils literal notranslate"><span class="pre">save_state_dipole()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.save_state_SUN"><code class="docutils literal notranslate"><span class="pre">save_state_SUN()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.load_state_dipole"><code class="docutils literal notranslate"><span class="pre">load_state_dipole()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="miscellaneous.html#SpinToolkit_py.load_state_SUN"><code class="docutils literal notranslate"><span class="pre">load_state_SUN()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2020, spintoolkit-dev.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

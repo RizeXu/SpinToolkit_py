@@ -1,0 +1,26 @@
+/* Force properties to display on separate lines in RTD theme */
+.rst-content dl.py.property,
+.rst-content dl.py.attribute {
+    display: block;
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.rst-content dl.py.property dt,
+.rst-content dl.py.attribute dt {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.rst-content dl.py.property dd,
+.rst-content dl.py.attribute dd {
+    display: block;
+    width: 100%;
+    margin-left: 24px;
+}
+
+/* Ensure no floating */
+.rst-content dl.py dt {
+    float: none !important;
+}

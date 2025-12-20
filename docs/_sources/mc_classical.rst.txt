@@ -1,0 +1,88 @@
+.. _mc_classical:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Classes
+====================
+
+.. autoclass:: SpinToolkit_py.mc_base
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, seed_global: int, seed_local: int, Ti: float, dump_dir: str = 'dump')
+        :no-index:
+
+        Constructor.
+
+        :param seed_global: Global random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param seed_local: Local random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param Ti: Initial temperature.
+        :param dump_dir: Directory for saving/loading states. (Default: "dump")
+
+.. autoclass:: SpinToolkit_py.mc_Ising
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, seed_global: int, seed_local: int, Ti: float, dump_dir: str = 'dump')
+        :no-index:
+
+        Constructor.
+
+        :param seed_global: Global random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param seed_local: Local random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param Ti: Initial temperature.
+        :param dump_dir: Directory for saving/loading states. (Default: "dump")
+
+.. autoclass:: SpinToolkit_py.mc_dipole
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, seed_global: int, seed_local: int, Ti: float, dump_dir: str = 'dump')
+        :no-index:
+
+        Constructor.
+
+        :param seed_global: Global random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param seed_local: Local random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param Ti: Initial temperature.
+        :param dump_dir: Directory for saving/loading states. (Default: "dump")
+
+.. autoclass:: SpinToolkit_py.mc_SUN
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :exclude-members: __init__
+
+    .. method:: __init__(self)
+
+        Default constructor.
+
+    .. method:: __init__(self, *, seed_global: int, seed_local: int, Ti: float, dump_dir: str = 'dump')
+        :no-index:
+
+        Constructor.
+
+        :param seed_global: Global random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param seed_local: Local random seed. Random sequences are guaranteed to be independent as long as the pair (seed_global, seed_local) is unique.
+        :param Ti: Initial temperature.
+        :param dump_dir: Directory for saving/loading states. (Default: "dump")

@@ -1,0 +1,14 @@
+.. _units:
+
+.. automodule:: SpinToolkit_py
+    :no-index:
+
+====================
+Class
+====================
+
+.. autoclass:: SpinToolkit_py.units
+    :members:
+    :undoc-members:
+    :show-inheritance:
+    :special-members: __init__
