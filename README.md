@@ -1,128 +1,157 @@
-# SpinToolkit_py
+# SpinToolkit
 
-This repository provides the documentation and python tutorials of the **SpinToolkit** library.
+---
 
-SpinToolkit is a high-performance **Toolkit for simulating Spin systems**, including
+SpinToolkit is a high-performance toolkit for simulating spin systems, including the following key functionalities:
 
-- Linear/Nonlinear spin wave (Holstein-Primakoff approach)
-- Generalized Linear/Nonlinear spin wave (SU(N) coherent state approach)
-- Linear spin wave (Monte-Carlo + Equation-of-Motion approach)
-- Various Monte-Carlo updates
+- Linear spin wave (LSW) calculations based on Holstein-Primakoff bosons
+- Generalized linear spin wave (GLSW) calculations based on SU(N) coherent state and Schwinger bosons
+- Monte-Carlo sampling of spin dipoles or SU(N) coherent states
 - Landau-Lifshitz dynamics
-- Symmetry Analysis of interactions for any given crystal
+- Linear spin wave (LSW) based on Monte-Carlo sampling + Equation of motion approach
+- ...
 
-:tada: :tada: :tada: The Python API of **SpinToolkit** is now available as Docker [images](https://github.com/orgs/spintoolkit-dev/packages) on the [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)!!!
+## Documentation and Tutorials
 
-The documentation of the library can be found at [SpinToolkit_py](https://spintoolkit-dev.github.io/SpinToolkit_py/).
+---
 
-## Docker/Podman (Linux/MacOS/Windows)
+The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-dev.github.io/SpinToolkit_py/).
 
-Using [Docker](https://www.docker.com/products/docker-hub/) or [Podman](https://podman.io/) is a convenient way to run the _SpinToolkit_ library without spending effort installing all the dependencies, and is recommended to all users. These two softwares share almost identical usage, so converting from one to another is painless. In fact, if you are using Podman in systems like Ubuntu, you can install the tool `podman-docker` and continue to use Docker syntax where `docker` is really `podman` in disguise. Alternatively, you can `alias docker=podman` to use Docker syntax with Podman engine.
+Tutorials are available in the `tutorials` folder. 
 
-**Note** : you will run image as a `root` user with **working directory** set to `/home/ubuntu`
+## Download
 
-### Installation
-1. To start, you should [install Docker](https://docs.docker.com/get-started/get-docker) or [install Podman](https://podman.io/).
+---
 
-2. Download the image on from [packages page](https://github.com/orgs/spintoolkit-dev/packages).
+1. **Prerequisite**: Install [Docker](https://www.docker.com) **or** [Podman](https://podman.io/).
+
+2. **Download Image**: Pull the SpinToolkit image from the command line:
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.2.0
+    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.4.1
     ```
 
-  **Note**: check the version you want to download in the website above.
+   **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
 
-3. creates a simple alias for easy use, like a shortcut for the image, which do not copy any data or take up extra space
+3. **Shorten Image Name (Optional)**: The default image name is long. You can create a shorter alias (tag) to make future commands easier to type:
 
     ``` shell
+    # Create the short alias
     docker tag ghcr.io/spintoolkit-dev/spintoolkit:<image_tag> spintoolkit:<image_tag>
-    #e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.2.0 spintoolkit:1.2.0
+    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.4.1 spintoolkit:1.4.1
+
+    # (Optional) Remove the reference to the long name to clean up list
+    docker rmi ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
+    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.4.1
     ```
 
-### Usage
-Full list of docker commands can be found in [Docker Docs](https://docs.docker.com/reference/cli/docker/) or [Podman Commands](https://docs.podman.io/en/latest/Commands.html).
+## Docker & Podman Reference
 
-A few commonly used commands to manage images and containers:
-- `docker images`: list the images
-- `docker rmi <image_id>`: remove the image
-- `docker ps -a`: list the containers
-- `docker rm <container_id>`: remove the container
-- `docker attach <container_name> (or <container_id>)`: attach to (enter) a running container
-- `docker stop|start <container_name> (or <container_id>)`: stop or start an existing container
+---
 
-#### general usage
-- To run a container in the background, with files shared between a local directory and a container directory:
+Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
 
-  ``` shell
-  docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir> <image_name>
-  #e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials_py:/home/ubuntu/tutorials_py spintoolkit:v1.0.5
-  ```
+> **Note to Podman users**: on systems like Ubuntu, you can install `podman-docker` or simply run `alias docker=podman` to use standard Docker syntax.
 
-- To exit and stop a container, simply type `exit` inside the terminal of the container.
+### Management Commands
 
-- To exit without stopping a container, use keyboard shortcut `ctrl+p+q` (hold `ctrl`, then press `p`, then press `q`).
+For a full list of commands, see the [Docker Docs](https://docs.docker.com/reference/cli/docker/) or [Podman Commands](https://docs.podman.io/en/latest/Commands.html).
 
-#### running jupyter notebook
+**Commonly used commands:**
 
-- Run jupyter notebook in container:
-  ``` shell
-  jupyter-notebook --port=<port> --ip=<ip>
-  #e.g., jupyter-notebook --port=8880 --ip=0.0.0.0
-  ```
+- `docker images`: List all local images
+- `docker rmi <image_id>`: Delete a specific image
+- `docker ps -a`: List all containers (running and stopped)
+- `docker rm <container_id>`: Delete a specific container
+- `docker stop` or `docker start <container_name>`: Stop or start an existing container
 
-- paste the produced url into your host machine's browser.
 
-#### python scripts
+### Running SpinToolkit
 
-- Run python scripts in container is straightforward:
+There are two ways to run SpinToolkit: keeping a container running in the background (Interactive Mode) or running a single script and exiting (Batch Mode).
 
-  ``` shell
-  python3 <script_name> <input_arguments>
-  #e.g., python3 tutorial4_MC_honeycomb.py \
-  #              --L 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --kT 0.4 \
-  #              --kT0 1.0 --max_sweeps 200000 --log_interval 50 \
-  #              --sweeps_per_dump 10000
-  ```
+#### Method A: Interactive Mode (Recommended)
 
-- Run python scripts without entering a container (No Attach):
+First, start a container in the background. This shares your local folder with the container so you can save your work.
 
-  ``` shell
-  podman run --rm \
-         -v <local_dir>:<container_dir>:z \
-         -w <container_workdir> <image_name> \
-         python3 <python_script> \
-         <input_arguments> &
-  #e.g., podman run --rm \
-  #             -v ./tutorials_py:/home/ubuntu/tutorials_py:z \
-  #             -w /home/ubuntu/tutorials_py spintoolkit:1.2.0 \
-  #             python3 /home/ubuntu/tutorials_py/tutorial4_MC_honeycomb.py \
-  #             --L 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --kT 0.4 \
-  #             --kT0 1.0 --max_sweeps 200000 --log_interval 50 \
-  #             --sweeps_per_dump 10000 &
-  ```
+``` shell
+docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials_py:/home/ubuntu/tutorials_py:z spintoolkit:v1.4.1
+```
+
+Once the container is running, you can use one of the workflows below:
+
+- Workflow-A1: Jupyter Notebook
+
+    1. **Enter the container**:
+
+        ``` shell
+        docker exec -it <container_name> /bin/bash
+        # e.g., docker exec -it sptk_tutorials /bin/bash
+        ```
+
+    2. **Start Jupyter**:
+
+        ``` shell
+        jupyter-notebook --port=<port> --ip=<ip>
+        # e.g., jupyter-notebook --port=8880 --ip=0.0.0.0
+        ```
+
+    3. **Access**: Copy the generated URL into your host machine's browser.
+
+    4. **Exit**: When finished, stop Jupyter (Ctrl+C) and type `exit` to leave the container.
+
+
+- Workflow-A2: Run Python Scripts via Shell
+
+    1. **Enter the container**:
+
+        ``` shell
+        docker exec -it <container_name> /bin/bash
+        # e.g., docker exec -it sptk_tutorials /bin/bash
+        ```
+
+    2. **Run your script**:
+
+        ``` shell
+        python3 <script_name> <input_arguments>
+        # e.g., python3 tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+        ```
+
+    3. **Exit**: Type `exit` to leave the container.
+
+#### Method B: Batch Mode (Run once and exit)
+
+If you do not want to maintain a running container, you can use `docker run --rm`. This creates a temporary container, runs your script, and deletes the container immediately after the script finishes.
+
+``` shell
+docker run --rm \
+       -v <local_dir>:<container_dir>:z \
+       -w <container_workdir> <image_name> \
+       python3 <python_script> \
+       <input_arguments>
+# e.g., docker run --rm -v ./tutorials_py:/home/ubuntu/tutorials_py:z -w /home/ubuntu/tutorials_py spintoolkit:1.4.1 python3 /home/ubuntu/tutorials_py/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+```
 
 ## Changelog
 
-### v1.2.0
+---
 
-The initial release version of image
+- **v1.4.1**
 
-## FAQ:
-
-1. **From python, how can I check the definition of a function/class from SpinToolkit?**
-
-    **A**: After importing the library by `import SpinToolkit_py as sptk`, the `help` function can be used to show the full docstring.
-
-   For instance, `help(sptk)` shows all available classes/function, and `help(sptk.date_and_time)` shows the definition of the `date_and_time` function.
-
-   Alternatively, if you are using IPython or Jupyter, `sptk.date_and_time?` should also work.
-
+    Initial release of Docker image.
 
 ## Citing
 
-If you find **SpinToolkit** useful, please cite this paper:
+---
+
+If you find SpinToolkit useful, please cite this paper:
 
 ```bibtex
-
+@misc{sptk,
+author = {Xu, L. and Shi, X. and Jiao, Y. and Yang, J. and Wang, Z.},
+title = {In preparation},
+year = {2026}
+}
 ```
