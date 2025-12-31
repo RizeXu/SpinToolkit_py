@@ -17,21 +17,15 @@ It has a few drawbacks:
 1. Computational speed is slower compared to using the true minimal cell
 2. The choice of large cell creates extra BZ folding. As a result,
    the number of excitation branches may not be easily counted.
-These problems can be avoided if we use a minimal, special cell, spanned by the super-cell basis:
+
+These problems can be avoided if we use the superlattice basis compatible with the minimal magnetic unit cell:
 A0 = 2 * a0 + 1 * a1,
 A1 = 1 * a0 + 2 * a1,
 where a0 = [1, 0], a1 = [-1/2, sqrt(3)/2].
-Here by "special" we meant that A0 (A1) is not parallel to a0 (a1).
-
 
 [ How to use ]
 For example, to use the lattice defined in "xxx.toml", simply call:
-```
-auto latt = sptl::lattice("triangular_K.toml");     // c++
-```
-
-or
 
 ```
-latt = sptk.lattice(filename = "triangular_K.toml") # python
+latt = sptk.lattice(filename = "triangular_K.toml")
 ```

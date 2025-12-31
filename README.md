@@ -1,7 +1,5 @@
 # SpinToolkit
 
----
-
 SpinToolkit is a high-performance toolkit for simulating spin systems, including the following key functionalities:
 
 - Linear spin wave (LSW) calculations based on Holstein-Primakoff bosons
@@ -13,15 +11,11 @@ SpinToolkit is a high-performance toolkit for simulating spin systems, including
 
 ## Documentation and Tutorials
 
----
-
 The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-dev.github.io/SpinToolkit_py/).
 
 Tutorials are available in the `tutorials` folder. 
 
 ## Download
-
----
 
 1. **Prerequisite**: Install [Docker](https://www.docker.com) **or** [Podman](https://podman.io/).
 
@@ -29,7 +23,7 @@ Tutorials are available in the `tutorials` folder.
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.4.1
+    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.4.2
     ```
 
    **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
@@ -39,16 +33,14 @@ Tutorials are available in the `tutorials` folder.
     ``` shell
     # Create the short alias
     docker tag ghcr.io/spintoolkit-dev/spintoolkit:<image_tag> spintoolkit:<image_tag>
-    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.4.1 spintoolkit:1.4.1
+    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.4.2 spintoolkit:1.4.2
 
     # (Optional) Remove the reference to the long name to clean up list
     docker rmi ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.4.1
+    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.4.2
     ```
 
 ## Docker & Podman Reference
-
----
 
 Docker and Podman are convenient tools for running the SpinToolkit library on different operating systems (Linux/Mac/Win). These two tools share almost identical usage, so you can choose either one. 
 
@@ -77,7 +69,7 @@ First, start a container in the background. This shares your local folder with t
 
 ``` shell
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials_py:/home/ubuntu/tutorials_py:z spintoolkit:v1.4.1
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.4.2
 ```
 
 Once the container is running, you can use one of the workflows below:
@@ -94,8 +86,8 @@ Once the container is running, you can use one of the workflows below:
     2. **Start Jupyter**:
 
         ``` shell
-        jupyter-notebook --port=<port> --ip=<ip>
-        # e.g., jupyter-notebook --port=8880 --ip=0.0.0.0
+        jupyter-notebook --allow-root --port=<port> --ip=<ip>
+        # e.g., jupyter-notebook --allow-root --port=8880 --ip=0.0.0.0
         ```
 
     3. **Access**: Copy the generated URL into your host machine's browser.
@@ -131,20 +123,16 @@ docker run --rm \
        -w <container_workdir> <image_name> \
        python3 <python_script> \
        <input_arguments>
-# e.g., docker run --rm -v ./tutorials_py:/home/ubuntu/tutorials_py:z -w /home/ubuntu/tutorials_py spintoolkit:1.4.1 python3 /home/ubuntu/tutorials_py/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+# e.g., docker run --rm -v ./tutorials_py:/home/ubuntu/tutorials_py:z -w /home/ubuntu/tutorials_py spintoolkit:1.4.2 python3 /home/ubuntu/tutorials_py/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
 ## Changelog
 
----
-
-- **v1.4.1**
+- **v1.4.2**
 
     Initial release of Docker image.
 
 ## Citing
-
----
 
 If you find SpinToolkit useful, please cite this paper:
 
