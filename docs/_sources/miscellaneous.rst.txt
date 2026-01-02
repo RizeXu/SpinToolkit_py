@@ -1,17 +1,17 @@
 .. _miscellaneous:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Functions
 ====================
 
-.. autofunction:: SpinToolkit_py.date_and_time
-.. autofunction:: SpinToolkit_py.total_omp_threads
-.. autofunction:: SpinToolkit_py.print_system_info
-.. autofunction:: SpinToolkit_py.round2int
-.. autofunction:: SpinToolkit_py.save_state_dipole
-.. autofunction:: SpinToolkit_py.save_state_SUN
-.. autofunction:: SpinToolkit_py.load_state_dipole
-.. autofunction:: SpinToolkit_py.load_state_SUN
+.. autofunction:: spintoolkit_py.date_and_time
+.. autofunction:: spintoolkit_py.total_omp_threads
+.. autofunction:: spintoolkit_py.print_system_info
+.. autofunction:: spintoolkit_py.round2int
+.. autofunction:: spintoolkit_py.save_state_dipole
+.. autofunction:: spintoolkit_py.save_state_SUN
+.. autofunction:: spintoolkit_py.load_state_dipole
+.. autofunction:: spintoolkit_py.load_state_SUN

@@ -1,13 +1,13 @@
 .. _rotation:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Class
 ====================
 
-.. autoclass:: SpinToolkit_py.Mat3_rotation
+.. autoclass:: spintoolkit_py.Mat3_rotation
     :members:
     :undoc-members:
     :show-inheritance:
@@ -17,7 +17,7 @@ Class
 
         Default constructor.
 
-    .. method:: __init__(self, *, omega: SpinToolkit_py.Vec3, theta: float)
+    .. method:: __init__(self, *, omega: spintoolkit_py.Vec3, theta: float)
         :no-index:
 
         Construct from axis and angle, :math:`R(\theta \hat{\omega})`.
@@ -34,7 +34,7 @@ Class
         :param beta: The second rotation angle :math:`\beta` around the Y-axis. :math:`0\le \beta \le \pi`.
         :param gamma: The third rotation angle :math:`\gamma` around the Z-axis. :math:`0 \le \gamma \lt 2\pi`.
 
-    .. method:: __init__(self, *, vi: SpinToolkit_py.Vec3, vf: SpinToolkit_py.Vec3)
+    .. method:: __init__(self, *, vi: spintoolkit_py.Vec3, vf: spintoolkit_py.Vec3)
         :no-index:
 
         Construct from two vectors, :math:`R \, \vec{v}_i = \vec{v}_f`.

@@ -1,13 +1,13 @@
 .. _mc_classical:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Classes
 ====================
 
-.. autoclass:: SpinToolkit_py.mc_base
+.. autoclass:: spintoolkit_py.mc_base
     :members:
     :undoc-members:
     :show-inheritance:
@@ -27,7 +27,7 @@ Classes
         :param Ti: Initial temperature.
         :param dump_dir: Directory for saving/loading states. (Default: "dump")
 
-.. autoclass:: SpinToolkit_py.mc_Ising
+.. autoclass:: spintoolkit_py.mc_Ising
     :members:
     :undoc-members:
     :show-inheritance:
@@ -47,7 +47,7 @@ Classes
         :param Ti: Initial temperature.
         :param dump_dir: Directory for saving/loading states. (Default: "dump")
 
-.. autoclass:: SpinToolkit_py.mc_dipole
+.. autoclass:: spintoolkit_py.mc_dipole
     :members:
     :undoc-members:
     :show-inheritance:
@@ -67,7 +67,7 @@ Classes
         :param Ti: Initial temperature.
         :param dump_dir: Directory for saving/loading states. (Default: "dump")
 
-.. autoclass:: SpinToolkit_py.mc_SUN
+.. autoclass:: spintoolkit_py.mc_SUN
     :members:
     :undoc-members:
     :show-inheritance:

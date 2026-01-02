@@ -1,13 +1,13 @@
 .. _crystal:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Classes
 ====================
 
-.. autoclass:: SpinToolkit_py.BondRaw
+.. autoclass:: spintoolkit_py.BondRaw
     :members:
     :undoc-members:
     :show-inheritance:
@@ -25,7 +25,7 @@ Classes
         :param ri: Coordinate of site-i in units of the basis :math:`\boldsymbol{a}_j`.
         :param rj: Coordinate of site-j in units of the basis :math:`\boldsymbol{a}_j`.
 
-    .. method:: __init__(self, *, crystal: SpinToolkit_py.Crystal, bond: SpinToolkit_py.Bond)
+    .. method:: __init__(self, *, crystal: spintoolkit_py.Crystal, bond: spintoolkit_py.Bond)
         :no-index:
 
         Construct from a bond on crystal.
@@ -33,7 +33,7 @@ Classes
         :param crystal: Crystal object.
         :param bond: Bond object.
 
-.. autoclass:: SpinToolkit_py.Bond
+.. autoclass:: spintoolkit_py.Bond
     :members:
     :undoc-members:
     :show-inheritance:
@@ -52,7 +52,7 @@ Classes
         :param j: Index of site-j.
         :param G: Integer displacement of unit cells.
 
-    .. method:: __init__(self, *, crystal: SpinToolkit_py.Crystal, bond_raw: SpinToolkit_py.BondRaw)
+    .. method:: __init__(self, *, crystal: spintoolkit_py.Crystal, bond_raw: spintoolkit_py.BondRaw)
         :no-index:
 
         Construct from a raw bond on crystal.
@@ -60,7 +60,7 @@ Classes
         :param crystal: Crystal object.
         :param bond_raw: BondRaw object.
 
-.. autoclass:: SpinToolkit_py.SymOP
+.. autoclass:: spintoolkit_py.SymOP
     :members:
     :undoc-members:
     :show-inheritance:
@@ -70,7 +70,7 @@ Classes
 
         Default constructor.
 
-    .. method:: __init__(self, *, R: SpinToolkit_py.Mat3, T: SpinToolkit_py.Vec3)
+    .. method:: __init__(self, *, R: spintoolkit_py.Mat3, T: spintoolkit_py.Vec3)
         :no-index:
 
         Construct from a rotation matrix and a translation vector.
@@ -78,7 +78,7 @@ Classes
         :param R: Rotation matrix.
         :param T: Translation vector.
 
-.. autoclass:: SpinToolkit_py.SiteSymmetry
+.. autoclass:: spintoolkit_py.SiteSymmetry
     :members:
     :undoc-members:
     :show-inheritance:
@@ -97,7 +97,7 @@ Classes
         :param multiplicity: Multiplicity.
         :param wyckoff: Wyckoff index.
 
-.. autoclass:: SpinToolkit_py.Crystal
+.. autoclass:: spintoolkit_py.Crystal
     :members:
     :undoc-members:
     :show-inheritance:
@@ -107,7 +107,7 @@ Classes
 
         Default constructor.
 
-    .. method:: __init__(self, *, basis_a: SpinToolkit_py.Mat3, pos_sub: list[SpinToolkit_py.Vec3], types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct by inferring symmetry from basis vectors and site positions.
@@ -117,7 +117,7 @@ Classes
         :param types: List of atom types (If list empty, all atoms are set to type 0). (Default: [])
         :param symprec: Tolerance for symmetry checks. (Default: 1.0e-5)
 
-    .. method:: __init__(self, *, basis_a: SpinToolkit_py.Mat3, pos_sub: list[SpinToolkit_py.Vec3], symbol: str, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], symbol: str, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct from a given space group symbol.
@@ -129,7 +129,7 @@ Classes
         :param types: List of atom types (If list empty, all atoms are set to type 0). (Default: [])
         :param symprec: Tolerance for symmetry checks. (Default: 1.0e-5)
 
-    .. method:: __init__(self, *, basis_a: SpinToolkit_py.Mat3, pos_sub: list[SpinToolkit_py.Vec3], spacegroup_number: int, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
+    .. method:: __init__(self, *, basis_a: spintoolkit_py.Mat3, pos_sub: list[spintoolkit_py.Vec3], spacegroup_number: int, setting: str = '', types: list[int] = [], symprec: float = 1e-05)
         :no-index:
 
         Construct from a given international space group number.
@@ -148,32 +148,32 @@ Classes
 
         :param name: Name of the lattice. Choose from [cubic, fcc] (todo: update).
 
-    .. method:: displacement(self, *, bond_raw: SpinToolkit_py.BondRaw) -> SpinToolkit_py.Vec3
+    .. method:: displacement(self, *, bond_raw: spintoolkit_py.BondRaw) -> spintoolkit_py.Vec3
 
         Displacement vector :math:`\boldsymbol{r}_j-\boldsymbol{r}_i` in cartesian coordinates.
 
         :param bond_raw: BondRaw object.
-        :rtype: SpinToolkit_py.Vec3
+        :rtype: spintoolkit_py.Vec3
         :return: The displacement vector in Cartesian coordinates.
 
-    .. method:: displacement(self, *, bond: SpinToolkit_py.Bond) -> SpinToolkit_py.Vec3
+    .. method:: displacement(self, *, bond: spintoolkit_py.Bond) -> spintoolkit_py.Vec3
         :no-index:
 
         Displacement vector :math:`\boldsymbol{r}_j-\boldsymbol{r}_i` in cartesian coordinates,
         accounting for the integer offsets `b.G` between unit cells.
 
         :param bond: Bond object.
-        :rtype: SpinToolkit_py.Vec3
+        :rtype: spintoolkit_py.Vec3
         :return: The displacement vector in Cartesian coordinates.
 
-    .. method:: distance(self, *, bond_raw: SpinToolkit_py.BondRaw) -> float
+    .. method:: distance(self, *, bond_raw: spintoolkit_py.BondRaw) -> float
 
         Distance between two sites measured in Cartesian coordinates.
 
         :param bond_raw: BondRaw object.
         :rtype: float
 
-    .. method:: distance(self, *, bond: SpinToolkit_py.Bond) -> float
+    .. method:: distance(self, *, bond: spintoolkit_py.Bond) -> float
         :no-index:
 
         Distance between two sites measured in Cartesian coordinates,
@@ -182,7 +182,7 @@ Classes
         :param bond: Bond object.
         :rtype: float
 
-    .. method:: is_related_by_symmetry(self, *, bond_raw1: SpinToolkit_py.BondRaw, bond_raw2: SpinToolkit_py.BondRaw) -> bool
+    .. method:: is_related_by_symmetry(self, *, bond_raw1: spintoolkit_py.BondRaw, bond_raw2: spintoolkit_py.BondRaw) -> bool
 
         Return true if there is a symmetry operation that transforms one bond into another or its reverse.
 
@@ -190,7 +190,7 @@ Classes
         :param bond_raw2: The second BondRaw object.
         :rtype: bool
 
-    .. method:: is_related_by_symmetry(self, *, bond1: SpinToolkit_py.Bond, bond2: SpinToolkit_py.Bond) -> bool
+    .. method:: is_related_by_symmetry(self, *, bond1: spintoolkit_py.Bond, bond2: spintoolkit_py.Bond) -> bool
         :no-index:
 
         Return true if there is a symmetry operation that transforms one bond into another or its reverse.
@@ -199,7 +199,7 @@ Classes
         :param bond2: The second Bond object.
         :rtype: bool
 
-    .. method:: is_coupling_valid(self, *, bond_raw: SpinToolkit_py.BondRaw, J: SpinToolkit_py.Mat3) -> bool
+    .. method:: is_coupling_valid(self, *, bond_raw: spintoolkit_py.BondRaw, J: spintoolkit_py.Mat3) -> bool
 
         Return true if a coupling matrix J is consistent with symmetries of a bond.
 
@@ -207,7 +207,7 @@ Classes
         :param J: The coupling matrix.
         :rtype: bool
 
-    .. method:: is_coupling_valid(self, *, bond: SpinToolkit_py.Bond, J: SpinToolkit_py.Mat3) -> bool
+    .. method:: is_coupling_valid(self, *, bond: spintoolkit_py.Bond, J: spintoolkit_py.Mat3) -> bool
         :no-index:
 
         Return true if a coupling matrix J is consistent with symmetries of a bond.
@@ -219,5 +219,5 @@ Classes
 ====================
 Functions
 ====================
-.. autofunction:: SpinToolkit_py.lattice_basis2angle
-.. autofunction:: SpinToolkit_py.lattice_angle2basis
+.. autofunction:: spintoolkit_py.lattice_basis2angle
+.. autofunction:: spintoolkit_py.lattice_angle2basis

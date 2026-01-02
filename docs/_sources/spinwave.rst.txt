@@ -1,19 +1,19 @@
 .. _spinwave:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Classes
 ====================
 
-.. autoclass:: SpinToolkit_py.k_cut
+.. autoclass:: spintoolkit_py.k_cut
     :special-members: __init__
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: SpinToolkit_py.k_map
+.. autoclass:: spintoolkit_py.k_map
     :special-members: __init__
     :members:
     :undoc-members:
@@ -24,13 +24,13 @@ Core Functions
 ====================
 
 
-.. autofunction:: SpinToolkit_py.SSSF
-.. autofunction:: SpinToolkit_py.DOS_LSW
-.. autofunction:: SpinToolkit_py.DOS_GLSW
-.. autofunction:: SpinToolkit_py.DSSF_GLSW
+.. autofunction:: spintoolkit_py.SSSF
+.. autofunction:: spintoolkit_py.DOS_LSW
+.. autofunction:: spintoolkit_py.DOS_GLSW
+.. autofunction:: spintoolkit_py.DSSF_GLSW
 
-.. currentmodule:: SpinToolkit_py
-.. function:: DSSF_LSW(*,model: SpinToolkit_py.model_spin, R: list[SpinToolkit_py.Mat3_rotation], T: float, k: list[float], omega_list: list[float], eval_1magnon: bool, maxeval_2magnon: int, maxeval_3magnon: int, maxeval_0magnon: int, broadening: str, sigma_or_eta: float, epsilon: float) -> tuple[list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float]]
+.. currentmodule:: spintoolkit_py
+.. function:: DSSF_LSW(*,model: spintoolkit_py.model_spin, R: list[spintoolkit_py.Mat3_rotation], T: float, k: list[float], omega_list: list[float], eval_1magnon: bool, maxeval_2magnon: int, maxeval_3magnon: int, maxeval_0magnon: int, broadening: str, sigma_or_eta: float, epsilon: float) -> tuple[list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float], list[float]]
 
     Calculate the dispersion :math:`\{\omega_{\boldsymbol{k},1}, \omega_{\boldsymbol{k},2}, \ldots\}` and the dynamic spin structure factor (DSSF) :math:`\mathcal{S}^{\mu\nu}(\boldsymbol{k},\omega)`, using dipole mode.
 
@@ -64,8 +64,8 @@ Core Functions
         * **SyzMzy_I** (*list[float]*) - :math:`\left(\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)\right)/i`, i.e., imaginary part of :math:`\mathcal{S}^{yz}(\boldsymbol{k},\omega) - \mathcal{S}^{zy}(\boldsymbol{k},\omega)`.
         * **SzxMxz_I** (*list[float]*) - :math:`\left(\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)\right)/i`, i.e., imaginary part of :math:`\mathcal{S}^{zx}(\boldsymbol{k},\omega) - \mathcal{S}^{xz}(\boldsymbol{k},\omega)`.
 
-.. currentmodule:: SpinToolkit_py
-.. function:: DSSF_LSW(*,model: SpinToolkit_py.model_spin, k_cut: SpinToolkit_py.k_cut, omega_min: float, omega_max: float, dt: float, maxtime: float, dump_dir: str, filename_prefix: str = 'DSSF')
+.. currentmodule:: spintoolkit_py
+.. function:: DSSF_LSW(*,model: spintoolkit_py.model_spin, k_cut: spintoolkit_py.k_cut, omega_min: float, omega_max: float, dt: float, maxtime: float, dump_dir: str, filename_prefix: str = 'DSSF')
     :no-index:
 
     Calculate the dynamic spin structure factor (DSSF) :math:`\mathcal{S}_\text{quantum}^{\mu\nu}(\boldsymbol{k},\omega)` by equation of motion (EOM), using dipole mode.
@@ -96,8 +96,8 @@ Core Functions
 Extension Functions
 ====================
 
-.. autofunction:: SpinToolkit_py.generate_lsw_mat
-.. autofunction:: SpinToolkit_py.generate_glsw_mat
-.. autofunction:: SpinToolkit_py.Bogoliubov
-.. autofunction:: SpinToolkit_py.fourier_spin
-.. autofunction:: SpinToolkit_py.fourier_spin_fft
+.. autofunction:: spintoolkit_py.generate_lsw_mat
+.. autofunction:: spintoolkit_py.generate_glsw_mat
+.. autofunction:: spintoolkit_py.Bogoliubov
+.. autofunction:: spintoolkit_py.fourier_spin
+.. autofunction:: spintoolkit_py.fourier_spin_fft

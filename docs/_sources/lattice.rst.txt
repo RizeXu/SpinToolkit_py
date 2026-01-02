@@ -1,13 +1,13 @@
 .. _lattice:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Class
 ====================
 
-.. autoclass:: SpinToolkit_py.lattice
+.. autoclass:: spintoolkit_py.lattice
     :members:
     :undoc-members:
     :show-inheritance:

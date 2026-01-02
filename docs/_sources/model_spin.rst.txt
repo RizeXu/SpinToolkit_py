@@ -1,13 +1,13 @@
 .. _model_spin:
 
-.. automodule:: SpinToolkit_py
+.. automodule:: spintoolkit_py
     :no-index:
 
 ====================
 Class
 ====================
 
-.. autoclass:: SpinToolkit_py.model_spin
+.. autoclass:: spintoolkit_py.model_spin
     :members:
     :undoc-members:
     :show-inheritance:
@@ -17,7 +17,7 @@ Class
 
         Default constructor.
 
-    .. method:: __init__(self, S: float, mode: str, lattice: SpinToolkit_py.lattice, verbose: bool = True)
+    .. method:: __init__(self, S: float, mode: str, lattice: spintoolkit_py.lattice, verbose: bool = True)
         :no-index:
 
         Construct from spin magnitude，mode and lattice.
@@ -32,7 +32,7 @@ Class
 Functions
 ====================
 
-.. currentmodule:: SpinToolkit_py
+.. currentmodule:: spintoolkit_py
 .. function:: spin_cart2spherical(*, s: list[float]) -> tuple[float, float]
 
     Convert spin dipole from Cartesian representation to spherical angles.
@@ -53,7 +53,7 @@ Functions
         * **theta** (*float*) - Polar angle.
         * **phi** (*float*) - Azimuthal angle.
 
-.. currentmodule:: SpinToolkit_py
+.. currentmodule:: spintoolkit_py
 .. function:: spin_cart2spherical(*, Z: list[complex]) -> list[float]
     :no-index:
 
@@ -81,7 +81,7 @@ Functions
     :rtype: list[float]
     :return: Length-(2N-2) list of SU(N) coherent state in Euler angles: :math:`[\theta^1,\theta^2,\ldots,\theta^{N-1},\phi^1,\phi^2,\ldots,\phi^{N-1}]`.
 
-.. currentmodule:: SpinToolkit_py
+.. currentmodule:: spintoolkit_py
 .. function:: spin_spherical2cart(*, theta: float, phi: float) -> list[float]
 
     Convert spin dipole from spherical angles to Cartesian representation.
@@ -97,7 +97,7 @@ Functions
     :rtype: list[float]
     :return: :math:`[s^x, s^y, s^z]`.
 
-.. currentmodule:: SpinToolkit_py
+.. currentmodule:: spintoolkit_py
 .. function:: spin_spherical2cart(*, theta_phi: list[float]) -> list[complex]
     :no-index:
 
@@ -125,13 +125,13 @@ Functions
     :rtype: list[complex]
     :return: Length-N list of SU(N) coherent state in complex numbers: :math:`[Z^0,Z^1,\ldots,Z^{N-1}]`.
 
-.. autofunction:: SpinToolkit_py.set_Ising_random
-.. autofunction:: SpinToolkit_py.set_dipole_random
-.. autofunction:: SpinToolkit_py.set_SUN_random
-.. autofunction:: SpinToolkit_py.set_RPA_random
+.. autofunction:: spintoolkit_py.set_Ising_random
+.. autofunction:: spintoolkit_py.set_dipole_random
+.. autofunction:: spintoolkit_py.set_SUN_random
+.. autofunction:: spintoolkit_py.set_RPA_random
 
-.. currentmodule:: SpinToolkit_py
-.. function:: spins_magnetization(*, s: list[SpinToolkit_py.Vec3], S: float) -> tuple[float, float, float]
+.. currentmodule:: spintoolkit_py
+.. function:: spins_magnetization(*, s: list[spintoolkit_py.Vec3], S: float) -> tuple[float, float, float]
 
     Compute average magnetization of spin dipoles.
 
@@ -147,7 +147,7 @@ Functions
         * **my** (*float*) - Average magnetization along y-direction.
         * **mz** (*float*) - Average magnetization along z-direction.
 
-.. currentmodule:: SpinToolkit_py
+.. currentmodule:: spintoolkit_py
 .. function:: spins_magnetization(*, Z: list[list[complex]]) -> tuple[float, float, float]
     :no-index:
 
