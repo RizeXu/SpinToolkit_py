@@ -48,77 +48,77 @@ print()
 L = latt.total_sites()
 for site_i in range(L):
     coor_i, sub_i = latt.site2coor(site = site_i)
-    coor0_i, Mi   = latt.coor2supercell0(coor = coor_i)
+    coor0_i, r̃i   = latt.r2superlattice(coor = coor_i)
     xi = coor_i[0]
     yi = coor_i[1]
 
     # J1 terms
     if sub_i == 0:
         coor_j      = [xi, yi]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J1),
                                   site_i = site_i, site_j = site_j,
-                                  Mi = Mi, Mj = Mj)
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
         coor_j      = [xi - 1, yi]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J1),
                                   site_i = site_i, site_j = site_j,
-                                  Mi = Mi, Mj = Mj)
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
         coor_j      = [xi - 1, yi - 1]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J1),
                                   site_i = site_i, site_j = site_j,
-                                  Mi = Mi, Mj = Mj)
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
     # J2 terms
     coor_j      = [xi + 1, yi]
-    coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+    coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
     site_j      = latt.coor2site(coor = coor_j, sub = sub_i)
     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J2),
                               site_i = site_i, site_j = site_j,
-                              Mi = Mi, Mj = Mj)
+                              rtilde_i = r̃i, rtilde_j = r̃j)
 
     coor_j      = [xi + 1, yi + 1]
-    coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+    coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
     site_j      = latt.coor2site(coor = coor_j, sub = sub_i)
     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J2),
                               site_i = site_i, site_j = site_j,
-                              Mi = Mi, Mj = Mj)
+                              rtilde_i = r̃i, rtilde_j = r̃j)
 
     coor_j      = [xi, yi + 1]
-    coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+    coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
     site_j      = latt.coor2site(coor = coor_j, sub = sub_i)
     hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J2),
                               site_i = site_i, site_j = site_j,
-                              Mi = Mi, Mj = Mj)
+                              rtilde_i = r̃i, rtilde_j = r̃j)
 
     # J3 terms
     if sub_i == 0:
         coor_j      = [xi, yi - 1]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J3),
-                                          site_i = site_i, site_j = site_j,
-                                          Mi = Mi, Mj = Mj)
+                                  site_i = site_i, site_j = site_j,
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
         coor_j      = [xi, yi + 1]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J3),
-                                          site_i = site_i, site_j = site_j,
-                                          Mi = Mi, Mj = Mj)
+                                  site_i = site_i, site_j = site_j,
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
         coor_j      = [xi - 2, yi - 1]
-        coor0_j, Mj = latt.coor2supercell0(coor = coor_j)
+        coor0_j, r̃j = latt.r2superlattice(coor = coor_j)
         site_j      = latt.coor2site(coor = coor_j, sub = 1)
         hamiltonian.add_2spin_XYZ(J = sptk.Vec3(0.0, 0.0, J3),
-                                          site_i = site_i, site_j = site_j,
-                                          Mi = Mi, Mj = Mj)
+                                  site_i = site_i, site_j = site_j,
+                                  rtilde_i = r̃i, rtilde_j = r̃j)
 
 hamiltonian.simplify().build_mc_list()
 print()

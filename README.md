@@ -27,7 +27,7 @@ Tutorials are available in the `tutorials` folder.
 
     ``` shell
     docker pull ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.4.2
+    #e.g., docker pull ghcr.io/spintoolkit-dev/spintoolkit:1.5.0
     ```
 
    **Note**: older versions of SpinToolkit are also available at the [packages page](https://github.com/orgs/spintoolkit-dev/packages).
@@ -37,11 +37,11 @@ Tutorials are available in the `tutorials` folder.
     ``` shell
     # Create the short alias
     docker tag ghcr.io/spintoolkit-dev/spintoolkit:<image_tag> spintoolkit:<image_tag>
-    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.4.2 spintoolkit:1.4.2
+    # e.g., docker tag ghcr.io/spintoolkit-dev/spintoolkit:1.5.0 spintoolkit:1.5.0
 
     # (Optional) Remove the reference to the long name to clean up list
     docker rmi ghcr.io/spintoolkit-dev/spintoolkit:<image_tag>
-    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.4.2
+    # e.g., docker rmi ghcr.io/spintoolkit-dev/spintoolkit:1.5.0
     ```
 
 ## Docker & Podman Reference
@@ -69,7 +69,7 @@ First, start a container in the background. This shares your local folder with t
 
 ``` shell
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
-# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.4.2
+# e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.5.0
 ```
 
 Once the container is running, you can use one of the workflows below:
@@ -123,12 +123,20 @@ docker run --rm \
        -w <container_workdir> <image_name> \
        python3 <python_script> \
        <input_arguments>
-# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.4.2 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
+# e.g., docker run --rm -v ./tutorials:/home/ubuntu/tutorials:z -w /home/ubuntu/tutorials spintoolkit:1.5.0 python3 /home/ubuntu/tutorials/tutorial4_MC_honeycomb.py --l 30 --J1 -1.0 --J2 1.5 --J3 0.5 --seed 0 --T 0.4 --T0 1.0 --max_sweeps 200000 --log_interval 50 --sweeps_per_dump 10000
 ```
 
 ## Changelog
 
-- **v1.4.2**
+- **v1.5.0** (01/07/2026)
+
+    - **BREAKING**: Rename `coor2supercell0` to `r2superlattice`.
+    - **BREAKING**: Rename `k2superBZ` to `k2superlattice`.
+    - **BREAKING**: Change key `Mi` to `rtilde_i`, and `Mj` to `rtilde_j` in `add_2spin_Jmatrix`, `add_2spin_XYZ`, `add_2spin_DM`, `add_biquadratic`.
+    - **BREAKING**: Change key `k_tilde` to `ktilde` in `generate_lsw_mat` and `generate_glsw_mat`.
+    - **BREAKING**: Change key `Hmat` to `H_ktilde` in `Bogoliubov`.
+
+- **v1.4.2** (01/02/2026)
 
     Initial release of Docker image.
 
