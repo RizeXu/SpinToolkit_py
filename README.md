@@ -3,17 +3,22 @@
 SpinToolkit is a high-performance toolkit for simulating spin systems, including the following key functionalities:
 
 - Linear spin wave (LSW) calculations based on Holstein-Primakoff bosons
-- Generalized linear spin wave (GLSW) calculations based on SU(N) coherent state and Schwinger bosons
-- Monte-Carlo sampling of spin dipoles or SU(N) coherent states
+- Generalized linear spin wave (GLSW) calculations based on SU(<i>N</i>) coherent state and Schwinger bosons
+- Monte-Carlo sampling of spin dipoles or SU(<i>N</i>) coherent states
 - Landau-Lifshitz dynamics
 - Linear spin wave (LSW) based on Monte-Carlo sampling + Equation of motion approach
 - ...
 
 ## Documentation and Tutorials
 
-The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-py.readthedocs.io/stable/).
+- The Python API documentation for SpinToolkit can be found at the [Documentation Website](https://spintoolkit-py.readthedocs.io/stable/).
 
-Tutorials are available in the `tutorials` folder. 
+
+- Tutorials are available in the `tutorials` folder. To try out these examples, you can 
+    ``` shell
+    git clone git@github.com:spintoolkit-dev/SpinToolkit_py.git
+    ```
+    or download the [zip file](https://github.com/spintoolkit-dev/SpinToolkit_py/archive/refs/heads/main.zip) and unzip it to your local machine.
 
 ## Download
 
@@ -71,6 +76,7 @@ First, start a container in the background. This shares your local folder with t
 docker run --name <container_name> -p <port>:<port> -it -d -v <local_dir>:<container_dir>:z <image_name>
 # e.g., docker run --name sptk_tutorials -p 8880:8880 -it -d -v ./tutorials:/home/ubuntu/tutorials:z spintoolkit:1.5.0
 ```
+> **Note**: The `<local_dir>` should exist in your local machine (e.g., `tutorials` that was downloaded from this repo).
 
 Once the container is running, you can use one of the workflows below:
 
